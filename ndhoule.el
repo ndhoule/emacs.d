@@ -30,6 +30,9 @@
 (require 'evil-leader)
 (require 'rainbow-delimiters)
 
+; Turn off visual and audio bells
+(setq ring-bell-function 'ignore)
+
 ; Enable Evil (vim) mode
 (evil-mode 1)
 
