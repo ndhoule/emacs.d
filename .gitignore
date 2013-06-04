@@ -21,13 +21,12 @@ themes/*
 url/*
 
 ## exported and encrypted files
-*gpg
-*el
-*elc
-*html
-*tex
-*pdf
-*txt
+*.gpg
+*.elc
+*.html
+*.tex
+*.pdf
+*.txt
 
 ## org stuff
 .org-id-locations
@@ -46,5 +45,5 @@ abbrev_defs
 scratch
 secret.org
 .emacs.desktop*
-.*~
+# .*~
 agent/*
