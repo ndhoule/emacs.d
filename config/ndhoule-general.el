@@ -9,6 +9,9 @@
 ; Turn off visual and audio bells
 (setq ring-bell-function 'ignore)
 
+; Disable top menu bar
+(menu-bar-mode -1)
+
 ; Save backup files in system temporary directory (e.g. /tmp)
 (setq backup-directory-alist
             `((".*" . ,temporary-file-directory)))
