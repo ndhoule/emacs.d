@@ -87,6 +87,7 @@
     ndhoule-color
     ndhoule-flycheck
     ndhoule-general
+    ndhoule-js
     ndhoule-linenumbers
     ndhoule-whitespace))
 (mapc #'require ndhoule/config)
