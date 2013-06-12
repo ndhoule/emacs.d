@@ -1,49 +1,21 @@
-## misc
+*~
+*.elc
 auto-save-list
+recentf
+savehist
+saveplace
+eshell
+elpa
+el-get
+semanticdb
+url
+ede-projects.el
+.DS_Store
 custom.el
 places
-.svn
-.DS_Store
-.git
-tramp
-
-## directories
-backups/*
-thumbs/*
-oddmuse/*
-eshell/*
-image-dired/*
-elim/*
-doc/*
-elpa/*
-src/*
-themes/*
-url/*
-
-## exported and encrypted files
-*.gpg
-*.elc
-*.html
-*.tex
-*.pdf
-*.txt
-
-## org stuff
-.org-id-locations
-
-## ignore mail/gnus cruft for those who keep mail in this directory
-drafts
-Mail
-mail
-.newsrc-dribble
-.nnmail-cache
-#.newsrc-dribble#
-*.SCORE
-marks
-.session
-abbrev_defs
-scratch
-secret.org
-.emacs.desktop*
-# .*~
-agent/*
+.smex-items
+savefile/
+/prelude-modules.el
+projectile-bookmarks.eld
+session*
+flycheck-*.el

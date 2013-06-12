@@ -6,6 +6,9 @@
 ; Enable Evil (vim-like) mode
 (evil-mode 1)
 
+; Enable evil-leader everywhere
+(global-evil-leader-mode)
+
 ; Set evil's mapleader key to comma
 (evil-leader/set-leader ",")
 
@@ -18,7 +21,6 @@
   "en"      'flycheck-next-error
   "ep"      'flycheck-previous-error
   "n"       'speedbar)
-
 
 (provide 'ndhoule-evil)
 ;;; ndhoule-evil.el ends here
