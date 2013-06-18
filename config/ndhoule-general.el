@@ -6,6 +6,10 @@
 ;;
 ;;; Code:
 
+;; Enable line numbering
+(require 'linum-relative)
+(global-linum-mode)
+
 ;; Don't create lockfiles
 (setq create-lockfiles nil)
 

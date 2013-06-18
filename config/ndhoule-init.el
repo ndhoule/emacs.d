@@ -54,12 +54,10 @@
                                     ndhoule-flycheck
                                     ndhoule-general
                                     ndhoule-js
-                                    ndhoule-linenumbers
                                     ndhoule-ruby
                                     ndhoule-whitespace)
   "A list of personal config files to load at startup.")
 
-;; Rack 'em up
 (mapc #'require ndhoule/standard-settings)
 
 (provide 'ndhoule-init)
