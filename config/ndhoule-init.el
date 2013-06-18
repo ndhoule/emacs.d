@@ -9,6 +9,7 @@
     starter-kit-lisp
     starter-kit-bindings
 
+    auto-indent-mode
     evil
     evil-leader
     evil-nerd-commenter
@@ -19,23 +20,30 @@
     rainbow-delimiters
     smooth-scrolling
 
-    ; Modes
-    auto-indent-mode
+    ;; Major modes
     autopair
+    coffee-mode
+    clojure-mode
+    css-mode
     csv-mode
+    git-commit-mode
     gitconfig-mode
     gitignore-mode
     haml-mode
     jade-mode
     js2-mode
+    json-mode
     less-css-mode
+    markdown-mode
     mustache-mode
     nginx-mode
-    ; rainbow-mode
+    python-mode
     requirejs-mode
+    ruby-mode
+    sass-mode
     yaml-mode
 
-    ; Themes
+    ;; Themes
     solarized-theme
     monokai-theme)
     "A list of packages that should be present at launch.")
