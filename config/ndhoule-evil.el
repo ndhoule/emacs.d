@@ -21,10 +21,9 @@
 (evil-leader/set-leader ",")
 
 (evil-leader/set-key
-  ;; Rainbow delimiters enabled by default; provide an easy way to disable them
-  "r"       'rainbow-delimiters-mode
-
+  "ra"      'rainbow-delimiters-mode
   "cu"      'cleanup-buffer
+  "re"      'linum-relative-toggle
 
   ;; Comments
   "c <SPC>" 'evilnc-comment-or-uncomment-lines
