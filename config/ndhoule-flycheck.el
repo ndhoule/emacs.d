@@ -5,6 +5,5 @@
 (setq flycheck-highlighting-mode 'columns)
 (setq flycheck-indication-mode 'right-fringe)
 
-
 (provide 'ndhoule-flycheck)
 ;;; ndhoule-flycheck.el ends here
