@@ -6,8 +6,8 @@
 ;;
 ;;; Code:
 
-; Disable Prelude's key chord mode
-(key-chord-mode -1)
+;; Don't create lockfiles
+(setq create-lockfiles nil)
 
 ; Turn off visual and audio bells
 (setq ring-bell-function 'ignore)
