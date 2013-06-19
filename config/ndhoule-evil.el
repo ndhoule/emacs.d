@@ -45,7 +45,7 @@
   "n"       'speedbar)
 
 ;; Add evil bindings to Magit
-evil-add-hjkl-bindings *bc-menu-mode-map* 'emacs)
+(evil-add-hjkl-bindings *bc-menu-mode-map* 'emacs)
 
 (evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
   "K" 'magit-discard-item
