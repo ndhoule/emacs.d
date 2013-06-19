@@ -31,7 +31,7 @@
     gitignore-mode
     haml-mode
     jade-mode
-    js2-mode
+    js3-mode
     json-mode
     less-css-mode
     markdown-mode
