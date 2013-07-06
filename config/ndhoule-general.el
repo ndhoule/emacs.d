@@ -6,9 +6,11 @@
 ;;
 ;;; Code:
 
-;; Enable line numbering
-(require 'linum-relative)
-(global-linum-mode)
+;; Enable Git gutter indicators
+(require 'git-gutter-fringe)
+
+;; Runs speedbar in the same buffer
+(require 'sr-speedbar)
 
 ;; Don't create lockfiles
 (setq create-lockfiles nil)
@@ -21,7 +23,8 @@
 (tool-bar-mode -1)
 
 ;; Automatically insert closing character of paired characters, like () and ""
-(paredit-mode 1)
+(require 'autopair)
+(autopair-global-mode)
 
 ;; Show matching parens/braces and disable delay
 (show-paren-mode 1)
@@ -67,5 +70,14 @@
     (lambda () (fci-mode t)))
 (global-fci-mode t)
 
+;; Diminish options for modeline-shrinking virtuousness
+;; (require 'diminish)
+;; (diminish 'abbrev-mode nil)
+;; (diminish 'eldoc-mode nil)
+;; (diminish 'undo-tree-mode nil)
+;; (diminish 'elisp-slime-nav-mode nil)
+;; (diminish 'hi-lock-mode nil)
+;; (diminish 'auto-fill-mode nil)
+
 (provide 'ndhoule-general)
-;;; ndhoule-general.el ends here
+;;; ndhoule-general.el ends here.

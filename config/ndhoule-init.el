@@ -1,8 +1,16 @@
-;;; ndhoule.el --- Entry point for personal customizations
-;;
+;;; ndhoule-init.el --- Entry point for personal customizations
+
 ;;; Commentary:
 ;;
+;; Everything that needs to be present at startup (before anything else loads)
+;; should go in here.
+
 ;;; Code:
+
+;; Start a background server unless one is already running
+(require 'server)
+(unless (server-running-p)
+    (server-start))
 
 (defvar ndhoule-packages
   '(starter-kit
@@ -10,11 +18,15 @@
     starter-kit-bindings
 
     auto-indent-mode
+    diminish
     evil
     evil-leader
     evil-nerd-commenter
+    evil-paredit
     flycheck
     fill-column-indicator
+    git-gutter-fringe
+    linum-relative
     magit
     paredit
     rainbow-delimiters
@@ -41,11 +53,18 @@
     requirejs-mode
     ruby-mode
     sass-mode
+    sws-mode
     yaml-mode
 
-    ;; Themes
+    ;; JS Skewer Mode
+    slime
+    slime-js
+    js2-refactor
+
+    ;; ThemesOB
+    monokai-theme
     solarized-theme
-    monokai-theme)
+    zenburn-theme)
     "A list of packages that should be present at launch.")
 
 (when (not package-archive-contents)
@@ -57,16 +76,34 @@
 
 (defvar ndhoule/standard-settings '(ndhoule-buffer
                                     ndhoule-color
+                                    ndhoule-css
                                     ndhoule-defuns
                                     ndhoule-evil
+                                    ndhoule-ffip
                                     ndhoule-flycheck
                                     ndhoule-general
                                     ndhoule-js
+                                    ndhoule-markdown
+                                    ndhoule-markup
+                                    ndhoule-linum
                                     ndhoule-ruby
-                                    ndhoule-whitespace)
+                                    ndhoule-speedbar
+                                    ndhoule-whitespace
+                                    ndhoule-yasnippet)
   "A list of personal config files to load at startup.")
+
+(defvar ndhoule/osx-settings '(ndhoule-osx)
+  "A list of OS X-specific settings to load at startup.")
 
 (mapc #'require ndhoule/standard-settings)
 
+(when (eq system-type 'darwin)
+    (mapc #'require ndhoule/osx-settings))
+
+(add-hook 'after-init-hook
+          #'(lambda ()
+              (when (locate-library "slime-js")
+                (require 'ndhoule-js-slime))))
+
 (provide 'ndhoule-init)
-;;; ndhoule.el ends here
+;;; ndhoule-init.el ends here

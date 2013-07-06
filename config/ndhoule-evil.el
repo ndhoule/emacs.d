@@ -17,13 +17,24 @@
 
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
+;; Prevent evil mode from screwing with Paredit
+; (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
+
 ;; Set evil's mapleader key to comma
 (evil-leader/set-leader ",")
+
+(define-key evil-normal-state-map (kbd ";") 'evil-ex)
+(define-key evil-visual-state-map (kbd ";") 'evil-ex)
+(define-key evil-motion-state-map (kbd ";") 'evil-ex)
+
+(define-key evil-normal-state-map (kbd "Q") (kbd "gqap"))
 
 (evil-leader/set-key
   "ra"      'rainbow-delimiters-mode
   "cu"      'cleanup-buffer
   "re"      'linum-relative-toggle
+  "t"       'find-file-in-project
+  "x"       'execute-extended-command
 
   ;; Comments
   "c <SPC>" 'evilnc-comment-or-uncomment-lines
@@ -42,7 +53,7 @@
   "ep"      'flycheck-previous-error
 
   ;; File management
-  "n"       'speedbar)
+  "n"       'sr-speedbar-toggle)
 
 ;; Add evil bindings to Magit
 (evil-add-hjkl-bindings *bc-menu-mode-map* 'emacs)
