@@ -6,11 +6,13 @@
 ;;
 ;;; Code:
 
-(require 'js-doc)
+(require-package 'coffee-mode)
+(require-package 'js3-mode)
+(require-package 'json-mode)
+(require-package 'requirejs-mode)
 
 ;; Ensure we use js3-mode rather than the built-in (outdated) javascript-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
-(add-to-list 'auto-mode-alist '("\\.json$" . js3-mode))
 
 (defun ndhoule/js3-mode-hook ()
   "Default settings for JS3 mode."
@@ -44,37 +46,18 @@
   (add-hook 'js3-mode-hook 'esk-paredit-nonlisp)
 
   ;; Fix Evil's < and > indentation
-  (setq evil-shift-width preferred-javascript-indent-level))
+  (setq evil-shift-width preferred-javascript-indent-level)
 
+  ;; Highlight keywords like TODO, etc.
+  (lambda ()
+    (hs-minor-mode 1)
+    (define-key js3-mode-map "\C-ci" 'js-doc-insert-function-doc)
+    (define-key js3-mode-map "@" 'js-doc-insert-tag)
+    (font-lock-add-keywords nil
+                            '(("\\<\\(XXX\\|FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+
+;; Enterprise! Go!
 (add-hook 'js3-mode-hook (lambda () (ndhoule/js3-mode-hook)))
-
-;; Highlight keywords like TODO, etc.
-(add-hook 'js3-mode-hook
-          (lambda ()
-            (define-key js3-mode-map "\C-ci" 'js-doc-insert-function-doc)
-            (define-key js3-mode-map "@" 'js-doc-insert-tag)
-            (font-lock-add-keywords nil
-                                    '(("\\<\\(XXX\\|FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
-
-(require 'skewer-mode)
-
-(defun skewer-start ()
-  (interactive)
-  (let ((httpd-port 8023))
-    (httpd-start)
-    (message "Ready to skewer the browser. Now jack in with the bookmarklet.")))
-
-(defun skewer-demo ()
-  (interactive)
-  (let ((httpd-port 8024))
-    (run-skewer)
-    (skewer-repl)))
-
-(require 'mouse-slider-mode)
-
-(add-to-list 'mouse-slider-mode-eval-funcs
-             '(js3-mode . skewer-eval-defun))
-
 
 (provide 'ndhoule-js)
 ;;; ndhoule-js.el ends here

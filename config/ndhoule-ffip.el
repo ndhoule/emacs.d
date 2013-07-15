@@ -48,9 +48,11 @@ Example:
          ".meteor"
          ".svn"
          "flycheck-"
+         "elpa"
          "node_modules"
          "rtd"
-         "coverage")))
+         "coverage"
+         ".min.js")))
 
 (provide 'ndhoule-ffip)
 ;;; ndhoule-ffip.el ends here

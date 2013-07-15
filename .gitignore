@@ -20,3 +20,4 @@ savefile/
 projectile-bookmarks.eld
 session*
 flycheck-*.el
+ac-comphist.dat

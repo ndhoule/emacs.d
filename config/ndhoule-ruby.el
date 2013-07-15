@@ -1,10 +1,12 @@
 ;;; ndhoule-ruby.el -- Ruby settings
-;;
+
 ;;; Commentary:
 ;;
 ;; All Ruby Emacs settings go in this file.
-;;
+
 ;;; Code:
+
+(require-package 'ruby-mode)
 
 (eval-after-load 'ruby
   (progn

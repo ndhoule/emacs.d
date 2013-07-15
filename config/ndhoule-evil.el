@@ -1,13 +1,15 @@
 ;;; ndhoule-evil.el -- All settings related to evil mode
-;;
+
 ;;; Commentary:
 ;;
-;; Emacs chords suck, but Evil lets us be all vimmy. Nice.
-;;
+;; Sorry Emacs, I'll never get used to chords after using Vim.
+
 ;;; Code:
 
-(require 'evil)
-(require 'evil-leader)
+(require-package 'evil)
+(require-package 'evil-leader)
+(require-package 'evil-nerd-commenter)
+(require-package 'evil-paredit)
 
 ;; Enable Evil (vim-like) mode
 (evil-mode 1)
@@ -35,6 +37,10 @@
   "re"      'linum-relative-toggle
   "t"       'find-file-in-project
   "x"       'execute-extended-command
+
+  ;; Folding
+  "zf"      'hs-hide-block
+  "zo"      'hs-show-block
 
   ;; Comments
   "c <SPC>" 'evilnc-comment-or-uncomment-lines

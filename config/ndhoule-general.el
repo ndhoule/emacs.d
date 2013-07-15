@@ -1,16 +1,10 @@
 ;;; ndhoule-general.el -- General editor settings
-;;
+
 ;;; Commentary:
 ;;
 ;; Settings that don't belong elsewhere or merit their own files
-;;
+
 ;;; Code:
-
-;; Enable Git gutter indicators
-(require 'git-gutter-fringe)
-
-;; Runs speedbar in the same buffer
-(require 'sr-speedbar)
 
 ;; Don't create lockfiles
 (setq create-lockfiles nil)
@@ -22,16 +16,8 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-;; Automatically insert closing character of paired characters, like () and ""
-(require 'autopair)
-(autopair-global-mode)
-
-;; Show matching parens/braces and disable delay
-(show-paren-mode 1)
-(setq show-paren-delay 0)
-
-;; Use rainbow parens
-(global-rainbow-delimiters-mode)
+;; Disable warnings about symlink
+(setq find-file-visit-truename t)
 
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
 (custom-set-variables
@@ -48,18 +34,19 @@
      (setq smooth-scroll-margin 5)
      nil))
 
-;; Set a default browser
-(setq browse-url-browser-function 'browse-default-macosx-browser)
+;; Automatically insert closing character of paired characters, like () and ""
+(require 'autopair)
+(autopair-global-mode)
+
+;; Show matching parens/braces and disable delay
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
+;; Use rainbow parens
+(global-rainbow-delimiters-mode)
 
 ;; This isn't 1980, thanks
 (setq sentence-end-double-space nil)
-
-;; Disable warnings about symlink
-(setq find-file-visit-truename t)
-
-;; Highlight the current line
-(global-hl-line-mode 1)
-(set-face-background 'hl-line "#303030")
 
 ;; Enable 80-character warning
 (setq-default fill-column 79)
@@ -70,14 +57,5 @@
     (lambda () (fci-mode t)))
 (global-fci-mode t)
 
-;; Diminish options for modeline-shrinking virtuousness
-;; (require 'diminish)
-;; (diminish 'abbrev-mode nil)
-;; (diminish 'eldoc-mode nil)
-;; (diminish 'undo-tree-mode nil)
-;; (diminish 'elisp-slime-nav-mode nil)
-;; (diminish 'hi-lock-mode nil)
-;; (diminish 'auto-fill-mode nil)
-
 (provide 'ndhoule-general)
-;;; ndhoule-general.el ends here.
+;;; ndhoule-general.el ends here

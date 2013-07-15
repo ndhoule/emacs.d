@@ -1,5 +1,5 @@
 ;;; ndhoule-yasnippet.el --- Config file for yasnippet
-;;
+
 ;;; Commentary:
 ;;
 ;; Like snippets? You're gonna love this file.

@@ -1,13 +1,13 @@
 ;;; ndhoule-defuns.el -- Function definitions
-;;
+
 ;;; Commentary:
 ;;
 ;; Broadly applicable functions go in here.
-;;
+
 ;;; Code:
 
 (defun cleanup-buffer ()
- "Perform a bunch of operations on the whitespace content of a buffer."
+ "Clean up extraneous whitespace in a buffer."
  (interactive)
  (prelude-indent-buffer)
  (prelude-untabify-buffer)

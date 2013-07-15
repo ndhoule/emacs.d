@@ -1,16 +1,32 @@
-;;; ndhoule-color.el
+;;; ndhoule-color.el -- Settings related to editor coloration and display
 
-;; Colorful parentheticals
-(require 'rainbow-delimiters)
+;;; Commentary:
+;;
+;; Any settings related to how the editor looks (font sizing, line
+;; highlighting, etc.) should go in here.
+
+;;; Code:
+
+(require-package 'rainbow-delimiters)
+(require-package 'fill-column-indicator)
+
+;; Themes
+(require-package 'solarized-theme)
+(require-package 'monokai-theme)
+(require-package 'zenburn-theme)
 
 ;; Set default font
-(set-default-font "DejaVu Sans Mono-12")
+(set-face-attribute 'default nil
+               :family "DejaVu Sans Mono" :height 120 :weight 'normal)
 
-;; Set theme. CLI Emacs doesn't like Monokai, so use Zenburn instead.
+;; Set theme; CLI Emacs doesn't like Monokai, so use Zenburn instead.
 (if window-system
     (load-theme 'monokai t)
   (load-theme 'zenburn t))
 
+;; Highlight the current line
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "#303030")
 
 ;; Set line highlight color
 (set-face-background 'hl-line "#303030")

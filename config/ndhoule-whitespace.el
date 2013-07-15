@@ -1,9 +1,9 @@
 ;;; ndhoule-whitespace.el -- Whitespace settings
-;;
+
 ;;; Commentary:
 ;;
 ;; All settings related to whitespace live in this file.
-;;
+
 ;;; Code:
 
 ;; Use two spaces as a tab
@@ -12,6 +12,8 @@
 
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
+
+(setq whitespace-style '(trailing tabs newline tab-mark newline-mark))
 
 ;; Obnoxiously highlight tab characters
 (add-hook 'font-lock-mode-hook

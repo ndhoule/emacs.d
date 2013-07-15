@@ -6,10 +6,15 @@
 
 ;;; Code:
 
-;; Set the current path to the shell's path. Emacs doesn't do this by default
-;; on OS X.
-(require 'exec-path-from-shell)
+(require-package 'exec-path-from-shell)
+(require-package 'dash-at-point)
+
+;; Set the current path to the shell's path. (Emacs doesn't do this by default
+;; on OS X.)
 (exec-path-from-shell-initialize)
 
+(evil-leader/set-key
+  "da" 'dash-at-point)
+
 (provide 'ndhoule-osx)
-;;; ndhoule-osx.el ends here.
+;;; ndhoule-osx.el ends here

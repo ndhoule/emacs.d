@@ -6,24 +6,26 @@
 ;;
 ;;; Code:
 
-(require 'package)
-(add-to-list 'package-archives
-               '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
-               '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
+;; Start a background server if one isn't already running
+(require 'server)
+(unless (server-running-p)
+    (server-start))
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+;; Helpful constants for OS-specific settings
+(defconst *is-a-mac* (eq system-type 'darwin))
+(defconst *is-carbon-emacs* (eq window-system 'mac))
+(defconst *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
 
 (defun add-to-loadpath (&rest dirs)
   (dolist (dir dirs load-path)
     (add-to-list 'load-path (expand-file-name dir) nil #'string=))
-  "Adds a list of directories to the loadpath.")
+  "Add a list of directories to the loadpath.")
 
-(add-to-loadpath "~/.emacs.d/lib"
-                 "~/.emacs.d/config")
+(add-to-loadpath user-emacs-directory
+                 (concat user-emacs-directory "lib")
+                 (concat user-emacs-directory "config"))
 
+(require 'init-elpa)
 (require 'ndhoule-init)
 
 ;;; init.el ends here
