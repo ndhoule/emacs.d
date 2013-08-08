@@ -26,6 +26,12 @@
                ac-source-words-in-all-buffer
                ac-source-yasnippet))
 
+;; Enable Tern (http://ternjs.net) autocompletion after Tern loads
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
+
 (dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
                 sass-mode yaml-mode csv-mode espresso-mode html-mode nxml-mode
                 sh-mode clojure-mode textile-mode markdown-mode js3-mode

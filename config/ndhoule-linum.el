@@ -6,7 +6,7 @@
 
 ;;; Code:
 
-;; Enable line numbering globally
+(require-package 'linum-relative) ;; TODO: necessary?
 (global-linum-mode t)
 
 ;; Enable relative line numbers

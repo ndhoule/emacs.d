@@ -23,6 +23,8 @@
 
 (add-to-loadpath user-emacs-directory
                  (concat user-emacs-directory "lib")
+                 (concat user-emacs-directory "site-lisp")
+                 (concat user-emacs-directory "site-lisp/tern/emacs")
                  (concat user-emacs-directory "config"))
 
 (require 'init-elpa)

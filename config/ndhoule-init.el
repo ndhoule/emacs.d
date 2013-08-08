@@ -15,25 +15,29 @@
 
 (defvar ndhoule/standard-settings '(ndhoule-macros
                                     ndhoule-defuns
-                                    ndhoule-misc ;; TODO: Deprecate
 
                                     ndhoule-buffer
                                     ndhoule-clojure
                                     ndhoule-color
                                     ndhoule-css
+                                    ndhoule-csv
                                     ndhoule-evil
                                     ndhoule-ffip
                                     ndhoule-flycheck
                                     ndhoule-general
                                     ndhoule-git
-                                    ndhoule-js
+                                    ndhoule-haml
+                                    ndhoule-javascript
                                     ndhoule-linum
                                     ndhoule-markdown
                                     ndhoule-nginx
+                                    ndhoule-osx
                                     ndhoule-python
                                     ndhoule-ruby
                                     ndhoule-sgml
+                                    ndhoule-smartparens
                                     ndhoule-whitespace
+                                    ndhoule-yaml
                                     ndhoule-yasnippet
 
                                     ;; Load last, as it relies on other plugins.

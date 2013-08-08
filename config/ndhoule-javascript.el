@@ -1,4 +1,4 @@
-;;; ndhoule-js.el -- JavaScript settings
+;;; ndhoule-javascript.el -- JavaScript settings
 ;;
 ;;; Commentary:
 ;;
@@ -11,14 +11,21 @@
 (require-package 'json-mode)
 (require-package 'requirejs-mode)
 
+;; Load Tern (http://ternjs.net) mode
+(autoload 'tern-mode "tern.el" nil t)
+
+(defvar preferred-javascript-indent-level 2)
+
 ;; Ensure we use js3-mode rather than the built-in (outdated) javascript-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
 
 (defun ndhoule/js3-mode-hook ()
   "Default settings for JS3 mode."
 
+  ;; Disable a lot of (weird,) fancy indentation
+  (setq js3-consistent-level-indent-inner-bracket t)
+
   ;; Set sane indentation defaults
-  (defvar preferred-javascript-indent-level 2)
   (setq js3-indent-level preferred-javascript-indent-level)
   (setq js3-basic-offset preferred-javascript-indent-level)
   (setq js3-bounce-indent-p t)
@@ -26,9 +33,8 @@
   (setq js3-enter-indents-newline t)
   (setq js3-indent-on-enter-key t)
   (setq js3-pretty-multiline-decl-indentation-p t)
-  (setq js3-consistent-level-indent-inner-bracket-p t)
 
-  ;; Spaces after function definitions? That's crazy talk
+  ;; Don't require spaces between `function()` -- default is `function ()`
   (setq js3-mode-squeeze-spaces t)
 
   ;; Set moar good defaults
@@ -40,10 +46,8 @@
   (setq js3-mirror-mode nil)
   (setq js3-cleanup-whitespace t)
 
-  ;; Add curly braces in pairs
-  (define-key js3-mode-map "{" 'paredit-open-curly)
-  (define-key js3-mode-map "}" 'paredit-close-curly-and-newline)
-  (add-hook 'js3-mode-hook 'esk-paredit-nonlisp)
+  ;; Enable Tern (http://ternjs.net) mode
+  (tern-mode t)
 
   ;; Fix Evil's < and > indentation
   (setq evil-shift-width preferred-javascript-indent-level)
@@ -59,5 +63,5 @@
 ;; Enterprise! Go!
 (add-hook 'js3-mode-hook (lambda () (ndhoule/js3-mode-hook)))
 
-(provide 'ndhoule-js)
-;;; ndhoule-js.el ends here
+(provide 'ndhoule-javascript)
+;;; ndhoule-javascript.el ends here

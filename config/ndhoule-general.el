@@ -6,18 +6,12 @@
 
 ;;; Code:
 
-;; Don't create lockfiles
-(setq create-lockfiles nil)
-
 ;; Turn off visual and audio bells
 (setq ring-bell-function 'ignore)
 
-;; Disable top menu bar
+;; Disable menu/toolbar
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-
-;; Disable warnings about symlink
-(setq find-file-visit-truename t)
 
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
 (custom-set-variables
@@ -27,35 +21,30 @@
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
 
-;; Prevent jumpy scrolling
-(require 'smooth-scrolling)
-(eval-after-load 'smooth-scrolling
-  '(progn
-     (setq smooth-scroll-margin 5)
-     nil))
+;; Don't create lockfiles
+(setq create-lockfiles nil)
 
-;; Automatically insert closing character of paired characters, like () and ""
-(require 'autopair)
-(autopair-global-mode)
+;; Disable warnings about editing symlinked files
+(setq find-file-visit-truename t)
 
-;; Show matching parens/braces and disable delay
-(show-paren-mode 1)
-(setq show-paren-delay 0)
-
-;; Use rainbow parens
-(global-rainbow-delimiters-mode)
-
-;; This isn't 1980, thanks
+;; Don't enforce double spaces at end of sentences
 (setq sentence-end-double-space nil)
 
 ;; Enable 80-character warning
-(setq-default fill-column 79)
-(require 'fill-column-indicator)
+(require-package 'fill-column-indicator)
+(setq-default fill-column 80)
 (setq fci-rule-width 1)
 (setq fci-rule-color "darkblue")
 (define-globalized-minor-mode global-fci-mode fci-mode
     (lambda () (fci-mode t)))
 (global-fci-mode t)
+
+;; Prevent scrolling from jumping half-pages at a time
+(require-package 'smooth-scrolling)
+(eval-after-load 'smooth-scrolling
+  '(progn
+     (setq smooth-scroll-margin 5)
+     nil))
 
 (provide 'ndhoule-general)
 ;;; ndhoule-general.el ends here
