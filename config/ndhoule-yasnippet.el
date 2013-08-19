@@ -6,7 +6,7 @@
 
 ;;; Code:
 
-(require 'yasnippet)
+(require-package 'yasnippet)
 (yas-global-mode t)
 
 ;; ;; Develop and keep personal snippets under ~/emacs.d/mysnippets
