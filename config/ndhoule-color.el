@@ -17,7 +17,7 @@
 
 ;; Set default font
 (set-face-attribute 'default nil
-               :family "DejaVu Sans Mono" :height 120 :weight 'normal)
+               :family "DejaVu Sans Mono for Powerline" :height 120 :weight 'normal)
 
 ;; Set theme; CLI Emacs doesn't like Monokai, so use Zenburn instead.
 (if window-system
