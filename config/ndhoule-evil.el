@@ -63,14 +63,20 @@
 
 ;; Add evil bindings to Magit
 (evil-add-hjkl-bindings *bc-menu-mode-map* 'emacs)
-
-(evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
-  "K" 'magit-discard-item
-  "L" 'magit-key-mode-popup-logging)
+(evil-add-hjkl-bindings magit-mode-map 'emacs)
+(evil-add-hjkl-bindings magit-diff-mode-map 'emacs)
 (evil-add-hjkl-bindings magit-status-mode-map 'emacs
   "K" 'magit-discard-item
   "l" 'magit-key-mode-popup-logging
   "h" 'magit-toggle-diff-refine-hunk)
+(evil-add-hjkl-bindings git-rebase-mode-map 'emacs
+  "K" 'git-rebase-mode-kill-line
+  "h" 'describe-mode)
+(evil-add-hjkl-bindings magit-log-mode-map 'emacs
+  "l" 'magit-key-mode-popup-logging)
+(evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
+  "K" 'magit-discard-item
+  "L" 'magit-key-mode-popup-logging)
 
 ;; AceJump is a nice addition to evil's standard motions. The following
 ;; definitions are necessary to define evil motions for ace-jump-mode

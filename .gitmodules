@@ -1,3 +1,6 @@
 [submodule "site-lisp/tern"]
 	path = site-lisp/tern
 	url = https://github.com/marijnh/tern.git
+[submodule "site-lisp/jdee"]
+	path = site-lisp/jdee
+	url = https://github.com/emacsmirror/jdee.git

@@ -16,6 +16,7 @@
 (defvar ndhoule/standard-settings '(ndhoule-macros
                                     ndhoule-defuns
 
+                                    ndhoule-ace
                                     ndhoule-buffer
                                     ndhoule-clojure
                                     ndhoule-color
@@ -27,6 +28,7 @@
                                     ndhoule-general
                                     ndhoule-git
                                     ndhoule-haml
+                                    ndhoule-java
                                     ndhoule-javascript
                                     ndhoule-linum
                                     ndhoule-markdown
