@@ -22,6 +22,7 @@
                                     ndhoule-color
                                     ndhoule-css
                                     ndhoule-csv
+                                    ndhoule-editorconfig
                                     ndhoule-evil
                                     ndhoule-ffip
                                     ndhoule-flycheck
