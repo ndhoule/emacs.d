@@ -6,8 +6,13 @@
 
 ;;; Code:
 
+;; JDEE
+(add-to-list 'load-path
+             (expand-file-name "jdee/dist/jdee-2.4.2/lisp" site-lisp-dir))
+
 (autoload 'jde-mode "jde" "JDE mode" t)
 
+;; Autocompile Java on save
 (add-hook 'jde-mode-hook
           (add-hook 'before-save-hook
                     (lambda ()

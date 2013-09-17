@@ -78,6 +78,26 @@
   "K" 'magit-discard-item
   "L" 'magit-key-mode-popup-logging)
 
+;; Ibuffer
+(eval-after-load 'ibuffer
+  '(progn
+     (evil-make-overriding-map ibuffer-mode-map 'normal t)
+     (evil-define-key 'normal ibuffer-mode-map
+       "j" 'evil-next-line
+       "k" 'evil-previous-line
+       "RET" 'ibuffer-visit-buffer)))
+
+(eval-after-load 'ibuffer
+  '(progn
+     ;; Use standard ibuffer bindings as a base
+     (set-keymap-parent
+      (evil-get-auxiliary-keymap ibuffer-mode-map 'normal t)
+      (assq-delete-all 'menu-bar (copy-keymap ibuffer-mode-map)))
+     (evil-define-key 'normal ibuffer-mode-map "j" 'ibuffer-forward-line)
+     (evil-define-key 'normal ibuffer-mode-map "k" 'ibuffer-backward-line)
+     (evil-define-key 'normal ibuffer-mode-map "J" 'ibuffer-jump-to-buffer) ; "j"
+     (evil-define-key 'normal ibuffer-mode-map (kbd "DEL") 'ibuffer-unmark-backward)))
+
 ;; AceJump is a nice addition to evil's standard motions. The following
 ;; definitions are necessary to define evil motions for ace-jump-mode
 ;; (version 2).

@@ -6,15 +6,24 @@
 ;;
 ;;; Code:
 
+
 (require-package 'coffee-mode)
 (require-package 'js3-mode)
 (require-package 'json-mode)
 (require-package 'requirejs-mode)
 
-;; Load Tern (http://ternjs.net) mode
+(defvar preferred-javascript-indent-level 2)
+
+;; Tern
+(add-to-list 'load-path (expand-file-name "tern/emacs" site-lisp-dir))
 (autoload 'tern-mode "tern.el" nil t)
 
-(defvar preferred-javascript-indent-level 2)
+(eval-after-load 'auto-complete
+  '(eval-after-load 'tern
+     '(progn
+        (require 'tern-auto-complete)
+        (setq tern-ac-on-dot nil)
+        (tern-ac-setup))))
 
 ;; Ensure we use js3-mode rather than the built-in (outdated) javascript-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
@@ -46,7 +55,7 @@
   (setq js3-mirror-mode nil)
   (setq js3-cleanup-whitespace t)
 
-  ;; Enable Tern (http://ternjs.net) mode
+  ;; Enable Tern
   (tern-mode t)
 
   ;; Fix Evil's < and > indentation
@@ -60,7 +69,7 @@
     (font-lock-add-keywords nil
                             '(("\\<\\(XXX\\|FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 
-;; Enterprise! Go!
+;; Enterprise, go!
 (add-hook 'js3-mode-hook (lambda () (ndhoule/js3-mode-hook)))
 
 (provide 'ndhoule-javascript)
