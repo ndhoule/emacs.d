@@ -50,6 +50,7 @@ Example:
          "flycheck-"
          "elpa"
          "node_modules"
+         "bower_components"
          "rtd"
          "coverage"
          ".min.js")))
