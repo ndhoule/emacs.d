@@ -23,6 +23,7 @@
                                     ndhoule-css
                                     ndhoule-csv
                                     ndhoule-editorconfig
+                                    ndhoule-emmet
                                     ndhoule-evil
                                     ndhoule-ffip
                                     ndhoule-flycheck
