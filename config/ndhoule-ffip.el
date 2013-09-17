@@ -52,6 +52,7 @@ Example:
          "node_modules"
          "bower_components"
          "rtd"
+         ".tmp"
          "coverage"
          ".min.js")))
 
