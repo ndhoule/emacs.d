@@ -27,6 +27,7 @@
 (load-theme 'monokai t)
 
 ;; Highlight the current line and column
+(require-package 'crosshairs)
 (crosshairs-mode t)
 (setq col-highlight-vline-face-flag t)
 (set-face-background 'hl-line "#303030")
