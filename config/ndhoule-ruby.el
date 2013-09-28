@@ -7,6 +7,7 @@
 ;;; Code:
 
 (require-package 'ruby-mode)
+(require-package 'inf-ruby)
 
 (eval-after-load 'ruby
   (progn

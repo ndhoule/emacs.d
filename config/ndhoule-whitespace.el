@@ -10,17 +10,17 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
+;; Always indent on enter
+(electric-indent-mode 1)
+
 ;; Ensure trailing newline at end of files
 (setq require-final-newline t)
 
 ;; Delete trailing whitespace before saving
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; ==================================================
-;; whitespace.el Options
-;; ==================================================
+;; whitespace.el with Unicode support
 (require-package 'unicode-whitespace)
-(global-whitespace-mode t)
 
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)

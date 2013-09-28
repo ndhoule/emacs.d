@@ -6,7 +6,7 @@
 
 ;;; Code:
 
-(require 'find-file-in-project)
+(require-package 'find-file-in-project)
 
 ;; No need to be stingy
 (setq ffip-limit 4096)

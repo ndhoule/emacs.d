@@ -52,6 +52,7 @@
   ;; Window/pane management
   "vs"      'split-window-right
   "hs"      'split-window-below
+  "bs"      'balance-windows
   "w"       'next-multiframe-window
 
   ;; Flycheck

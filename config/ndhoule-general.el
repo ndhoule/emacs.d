@@ -9,14 +9,9 @@
 ;; Turn off visual and audio bells
 (setq ring-bell-function 'ignore)
 
-;; Disable menu/toolbar
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
 (custom-set-variables
- '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
- '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
+ '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t))))
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
@@ -29,6 +24,9 @@
 
 ;; Don't enforce double spaces at end of sentences
 (setq sentence-end-double-space nil)
+
+;; Autoreload files on change
+(global-auto-revert-mode t)
 
 ;; Enable 80-character warning
 (require-package 'fill-column-indicator)

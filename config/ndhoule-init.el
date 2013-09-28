@@ -7,11 +7,9 @@
 
 ;;; Code:
 
-;; Use Emacs Starter Kit as a basis for configuration
-;; https://github.com/technomancy/emacs-starter-kit
-(require-package 'starter-kit)
-(require-package 'starter-kit-bindings)
-(require-package 'starter-kit-lisp)
+;; Use Better Defaults as a basis for configuration
+;; https://github.com/technomancy/better-defaults
+(require-package 'better-defaults)
 
 (defvar ndhoule/standard-settings '(ndhoule-macros
                                     ndhoule-defuns
@@ -30,6 +28,7 @@
                                     ndhoule-general
                                     ndhoule-git
                                     ndhoule-haml
+                                    ndhoule-ido
                                     ndhoule-java
                                     ndhoule-javascript
                                     ndhoule-linum
