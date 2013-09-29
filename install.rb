@@ -2,7 +2,9 @@
 
 # TODO: Assumes Java, Ant installed. Check this.
 
-HOME = Dir.home
+require 'etc'
+
+HOME = Etc.getpwuid.dir
 CWD = File.expand_path(File.dirname(__FILE__))
 SITE_LISP_DIR = File.join(CWD, 'site-lisp')
 JDEE_DIR = File.join(SITE_LISP_DIR, 'jdee')
