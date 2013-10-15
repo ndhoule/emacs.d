@@ -31,6 +31,7 @@
                                     ndhoule-ido
                                     ndhoule-java
                                     ndhoule-javascript
+                                    ndhoule-keybindings
                                     ndhoule-linum
                                     ndhoule-markdown
                                     ndhoule-nginx
@@ -39,6 +40,7 @@
                                     ndhoule-ruby
                                     ndhoule-sgml
                                     ndhoule-smartparens
+                                    ndhoule-sml
                                     ndhoule-whitespace
                                     ndhoule-yaml
                                     ndhoule-yasnippet
