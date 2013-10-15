@@ -17,18 +17,18 @@
 ;; Enable evil-leader everywhere
 (global-evil-leader-mode)
 
+;; Use space to enable ace jump mode
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
-
-;; Prevent evil mode from screwing with Paredit
-; (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
 
 ;; Set evil's mapleader key to comma
 (evil-leader/set-leader ",")
 
+;; Use ; as : for glorious RSI prevention
 (define-key evil-normal-state-map (kbd ";") 'evil-ex)
 (define-key evil-visual-state-map (kbd ";") 'evil-ex)
 (define-key evil-motion-state-map (kbd ";") 'evil-ex)
 
+;; Shortcut for wrapping paragraphs at line limit
 (define-key evil-normal-state-map (kbd "Q") (kbd "gqap"))
 
 (evil-leader/set-key
