@@ -21,17 +21,13 @@
                     :height 120 :weight 'normal)
 
 ;; Set theme; CLI Emacs doesn't like Monokai, so use Zenburn instead.
-;(if window-system
-    ;(load-theme 'monokai t)
-  ;(load-theme 'zenburn t))
 (load-theme 'monokai t)
 
-;; Highlight the current line and column
-(require-package 'crosshairs)
-(crosshairs-mode t)
-(setq col-highlight-vline-face-flag t)
-(set-face-background 'hl-line "#303030")
-(set-face-background 'col-highlight "#303030")
+;; Show the column/line number in the modeline
+(setq column-number-mode t)
+
+;; Highlight the current line
+(global-hl-line-mode 1)
 
 ;; Set line highlight color
 (set-face-background 'hl-line "#303030")
