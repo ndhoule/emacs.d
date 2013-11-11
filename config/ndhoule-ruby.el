@@ -20,12 +20,15 @@
     (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
     (add-to-list 'auto-mode-alist '("Thorfile$" . ruby-mode))
     (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+    (add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
     (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
     (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
     ; Ignore binary Ruby files
     (add-to-list 'completion-ignored-extensions ".rbc")
-    (add-to-list 'completion-ignored-extensions ".rbo")))
+    (add-to-list 'completion-ignored-extensions ".rbo")
+
+    (setq ruby-deep-indent-paren nil)))
 
 (provide 'ndhoule-ruby)
 ;;; ndhoule-ruby.el ends here
