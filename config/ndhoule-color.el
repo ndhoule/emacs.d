@@ -11,17 +11,14 @@
 (require-package 'fill-column-indicator)
 
 ;; Themes
-(require-package 'solarized-theme)
-(require-package 'monokai-theme)
-(require-package 'zenburn-theme)
+(require-package 'base16-theme)
 
 ;; Set default font
 (setq-default line-spacing 2)
 (set-face-attribute 'default nil :family "DejaVu Sans Mono"
                     :height 120 :weight 'normal)
 
-;; Set theme; CLI Emacs doesn't like Monokai, so use Zenburn instead.
-(load-theme 'monokai t)
+(load-theme 'base16-default t)
 
 ;; Show the column/line number in the modeline
 (setq column-number-mode t)
