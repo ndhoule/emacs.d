@@ -41,6 +41,7 @@
                                     ndhoule-sgml
                                     ndhoule-smartparens
                                     ndhoule-sml
+                                    ndhoule-spell
                                     ndhoule-whitespace
                                     ndhoule-yaml
                                     ndhoule-yasnippet
