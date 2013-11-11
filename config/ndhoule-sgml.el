@@ -6,15 +6,12 @@
 
 ;;; Code:
 
-(require-package 'sws-mode)
 (require-package 'jade-mode)
-(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 
-(require-package 'mustache-mode)
-(require-package 'handlebars-mode)
-(add-to-list 'auto-mode-alist '("\\.hbs$" . handlebars-mode))
-(add-to-list 'auto-mode-alist '("\\.handlebars$" . handlebars-mode))
+(require-package 'handlebars-sgml-mode)
+(require 'handlebars-sgml-mode)
+(handlebars-use-mode 'global)
 
 (provide 'ndhoule-sgml)
 ;;; ndhoule-sgml.el ends here
