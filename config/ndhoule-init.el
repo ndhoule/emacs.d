@@ -23,7 +23,7 @@
                                     ndhoule-editorconfig
                                     ndhoule-emmet
                                     ndhoule-evil
-                                    ndhoule-ffip
+                                    ndhoule-projectile
                                     ndhoule-flycheck
                                     ndhoule-general
                                     ndhoule-git
