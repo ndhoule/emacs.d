@@ -7,9 +7,13 @@
 ;;; Code:
 
 (require-package 'css-mode)
-(require-package 'less-css-mode)
-(require-package 'sass-mode)
 
+(require-package 'less-css-mode)
+
+(require-package 'sws-mode)
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+
+(require-package 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
 
