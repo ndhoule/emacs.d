@@ -17,6 +17,11 @@
 ;; Enable evil-leader everywhere
 (global-evil-leader-mode)
 
+(setq evil-default-cursor t)
+
+;; Set cursor to red bar in insert mode
+(setq evil-insert-state-cursor '("red" hbar))
+
 ;; Use space to enable ace jump mode
 (define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
@@ -33,9 +38,9 @@
 
 (evil-leader/set-key
   "ra"      'rainbow-delimiters-mode
-  "cu"      'cleanup-buffer
+  "cu"      'clean-up-buffer-or-region
   "re"      'linum-relative-toggle
-  "t"       'find-file-in-project
+  "t"       'projectile-find-file
   "x"       'execute-extended-command
 
   ;; Folding
@@ -60,7 +65,8 @@
   "ep"      'flycheck-previous-error
 
   ;; File management
-  "n"       'sr-speedbar-toggle)
+  "n"       'sr-speedbar-toggle
+  "o"       'open-file-with)
 
 ;; Add evil bindings to Magit
 (evil-add-hjkl-bindings *bc-menu-mode-map* 'emacs)
