@@ -17,6 +17,9 @@
 ;; Case sensitivity is important when finding matches
 (setq ac-ignore-case nil)
 
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
+
 ;; Add additional completion sources to auto-complete
 (set-default 'ac-sources
              '(ac-source-imenu

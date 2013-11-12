@@ -15,6 +15,7 @@
 (setq yas-indent-line 'fixed)
 
 (require-package 'angular-snippets)
+(require 'angular-snippets)
 
 (provide 'ndhoule-yasnippet)
 ;;; ndhoule-yasnippet.el ends here
