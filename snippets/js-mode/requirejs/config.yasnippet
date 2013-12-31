@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: require-config
+# key: rconf
+# group: requirejs
+# --
+require.config({
+  baseUrl: '$1',
+
+  paths: {
+    $2
+  },
+
+  shim: {
+    $3
+  }
+});

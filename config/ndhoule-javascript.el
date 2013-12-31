@@ -9,8 +9,10 @@
 
 (require-package 'coffee-mode)
 (require-package 'js2-mode)
-(require-package 'json-mode)
 (require-package 'requirejs-mode)
+
+;; Don't use `json-mode' since it can't JSON worth a shit
+(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
 (defvar preferred-javascript-indent-level 2)
 
@@ -25,7 +27,7 @@
         (setq tern-ac-on-dot nil)
         (tern-ac-setup))))
 
-;; Ensure we use js2-mode rather than the built-in (outdated) javascript-mode
+;; Ensure we use js-mode rather than the built-in (outdated) javascript-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
 (defun ndhoule/js-mode-hook ()
