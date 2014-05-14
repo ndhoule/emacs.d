@@ -15,7 +15,10 @@
 
 (require-package 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
-(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
+
+(require-package 'scss-mode)
+(add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
+(setq scss-compile-at-save nil)
 
 ;; Set CSS spacing to two characters
 (setq css-indent-offset 2)
