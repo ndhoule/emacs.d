@@ -10,6 +10,7 @@
 (require-package 'evil-leader)
 (require-package 'evil-nerd-commenter)
 (require-package 'evil-paredit)
+(require-package 'evil-surround)
 
 ;; Enable Evil (vim-like) mode
 (evil-mode 1)
@@ -18,6 +19,9 @@
 (global-evil-leader-mode)
 
 (setq evil-default-cursor t)
+
+; Enable evil-surround
+(global-evil-surround-mode 1)
 
 ;; Set cursor to red bar in insert mode
 (setq evil-insert-state-cursor '("red" hbar))
