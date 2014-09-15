@@ -8,5 +8,7 @@
 
 (require-package 'clojure-mode)
 
+(add-hook 'clojure-mode-hook 'evil-paredit-mode)
+
 (provide 'ndhoule-clojure)
 ;;; ndhoule-clojure.el ends here
