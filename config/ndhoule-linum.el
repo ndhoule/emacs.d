@@ -9,6 +9,9 @@
 (require-package 'linum-relative) ;; TODO: necessary?
 (global-linum-mode t)
 
+;; Show the column/line number in the modeline
+(setq column-number-mode t)
+
 ;; Enable relative line numbers
 (defvar my-linum-format-string "%3d ")
 
@@ -34,6 +37,7 @@
   (let ((my-linum-current-line-number (line-number-at-pos)))
     ad-do-it))
 (ad-activate 'linum-update)
+
 
 (provide 'ndhoule-linum)
 ;;; ndhoule-linum.el ends here
