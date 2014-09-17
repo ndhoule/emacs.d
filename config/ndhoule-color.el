@@ -8,7 +8,6 @@
 ;;; Code:
 
 (require-package 'rainbow-delimiters)
-(require-package 'fill-column-indicator)
 
 ;; Themes
 (require-package 'base16-theme)
