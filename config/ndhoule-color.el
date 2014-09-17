@@ -15,6 +15,7 @@
 (set-face-attribute 'default nil :family "DejaVu Sans Mono"
                     :height 120 :weight 'normal)
 
+;; Set default theme
 (load-theme 'base16-default t)
 
 ;; Show the column/line number in the modeline
