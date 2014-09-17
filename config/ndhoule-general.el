@@ -6,6 +6,9 @@
 
 ;;; Code:
 
+;; Disable splash screen
+(setq inhibit-startup-message t)
+
 ;; Turn off visual and audio bells
 (setq ring-bell-function 'ignore)
 
