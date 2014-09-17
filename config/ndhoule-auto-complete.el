@@ -7,33 +7,66 @@
 ;;; Code:
 
 (require-package 'auto-complete)
-(require 'auto-complete-config)
+(require-package 'fuzzy)
+(require-package 'popup)
 
+;;;
+;;; Auto-Complete Settings
+;;;
+
+(require 'auto-complete-config)
 (global-auto-complete-mode t)
 
-;; Start auto-completion only after 2 characters of a word
+(ac-flyspell-workaround)
+(setq ac-auto-show-menu t)
 (setq ac-auto-start 2)
+(setq ac-candidate-menu-min 0)
+(setq ac-dwim)
+(setq ac-quick-help-delay 1)
+(setq ac-show-menu-immediately-on-auto-complete t)
 
-;; Case sensitivity is important when finding matches
-(setq ac-ignore-case nil)
-
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
-
-;; Add additional completion sources to auto-complete
 (set-default 'ac-sources
              '(ac-source-imenu
                ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
-               ac-source-words-in-all-buffer
+               ac-source-semantic
                ac-source-yasnippet))
 
-(dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
-                sass-mode yaml-mode csv-mode espresso-mode html-mode nxml-mode
-                sh-mode clojure-mode textile-mode markdown-mode js3-mode
-                css-mode less-css-mode sql-mode))
+(dolist (mode '(clojure-mode
+                css-mode
+                csv-mode
+                espresso-mode
+                haml-mode
+                haskell-mode
+                html-mode
+                js3-mode
+                less-css-mode
+                log-edit-mode
+                magit-log-edit-mode
+                markdown-mode
+                nxml-mode
+                org-mode
+                sass-mode
+                sh-mode
+                sql-mode
+                text-mode
+                textile-mode
+                yaml-mode))
   (add-to-list 'ac-modes mode))
+
+;;
+;; Keybindings
+;;
+
+(define-key ac-completing-map (kbd "TAB") 'ac-next)
+(define-key ac-completing-map (kbd "C-j") 'ac-next)
+(define-key ac-completing-map (kbd "C-k") 'ac-previous)
+(define-key ac-completing-map (kbd "RET") 'ac-complete)
+(define-key ac-completing-map (kbd "C-l") 'ac-complete)
+(define-key ac-completing-map (kbd "ESC") 'evil-normal-state)
+(evil-make-intercept-map ac-completing-map)
+
 
 (provide 'ndhoule-auto-complete)
 ;;; ndhoule-auto-complete.el ends here
