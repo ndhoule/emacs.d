@@ -9,23 +9,37 @@
 ;; Start a background server if one isn't already running
 (require 'server)
 (unless (server-running-p)
-    (server-start))
-
-;; Disable splash screen
-(setq inhibit-startup-message t)
+  (server-start))
 
 ;; Helpful constants for OS-specific settings
 (defconst *is-a-mac* (eq system-type 'darwin))
 (defconst *is-carbon-emacs* (eq window-system 'mac))
 (defconst *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
 
-;; Set up loadpath
+;;;;;;;;;;;;;;
+;; Loadpath ;;
+;;;;;;;;;;;;;;
+
+; Set the site-lisp directory as a variable to be used in other config files
 (setq site-lisp-dir
       (expand-file-name "site-lisp" user-emacs-directory))
 
-(add-to-list 'load-path user-emacs-directory)
-(add-to-list 'load-path site-lisp-dir)
-(add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
+(setq user-config-dir
+      (expand-file-name "config" user-emacs-directory))
+
+(defun add-to-loadpath (&rest paths)
+  "Adds a series of paths to the loadpath."
+  (mapc (apply-partially 'add-to-list 'load-path) paths))
+
+;; Add common paths to loadpath
+(add-to-loadpath user-emacs-directory
+                 site-lisp-dir
+                 user-config-dir)
+
+;; Recursively add the contents of `user-config-dir` to the loadpath. This allows us to organize the
+;; `config` directory in subdirectories
+(let ((default-directory user-config-dir))
+  (normal-top-level-add-subdirs-to-load-path))
 
 (require 'init-elpa)
 (require 'ndhoule-init)
