@@ -1,4 +1,4 @@
-;;; ndhoule-ace.el -- Ace Jump settings
+;;; ndhoule-ace.el --- Ace Jump settings
 
 ;;; Commentary:
 ;;
@@ -7,6 +7,7 @@
 ;;; Code:
 
 (require-package 'ace-jump-mode)
+
 
 (provide 'ndhoule-ace)
 ;;; ndhoule-ace.el ends here

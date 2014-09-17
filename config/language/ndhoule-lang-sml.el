@@ -1,4 +1,4 @@
-;;; ndhoule-sml.el -- Standard ML settings
+;;; ndhoule-lang-sml.el -- Standard ML settings
 
 ;;; Commentary:
 ;;
@@ -8,5 +8,6 @@
 
 (require-package 'sml-mode)
 
-(provide 'ndhoule-sml)
-;;; ndhoule-sml.el ends here
+
+(provide 'ndhoule-lang-sml)
+;;; ndhoule-lang-sml.el ends here

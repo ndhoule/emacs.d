@@ -1,8 +1,8 @@
-;;; ndhoule-color.el -- Coloration and display settings
+;;; ndhoule-color.el --- Coloration and display settings
 
 ;;; Commentary:
 ;;
-;; Any settings related to font theming and cosmetic coloration go in here.
+;; Any settings related to font theming and (cosmetic) coloration go in here.
 
 ;;; Code:
 
@@ -28,6 +28,16 @@
 
 ;; Make area select color nicer
 (set-face-background 'region "#595959")
+
+;;;
+;;; Line Length
+;;;
+
+(require-package 'column-enforce-mode)
+
+;; Highlight columns that exceed 100 characters
+(setq column-enforce-column 100)
+(add-hook 'prog-mode-hook 'column-enforce-mode)
 
 
 (provide 'ndhoule-color)

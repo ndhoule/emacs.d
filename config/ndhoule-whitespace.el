@@ -1,4 +1,4 @@
-;;; ndhoule-whitespace.el -- Whitespace settings
+;;; ndhoule-whitespace.el --- Whitespace settings
 
 ;;; Commentary:
 ;;
@@ -21,11 +21,10 @@
 ;; Delete trailing whitespace before saving (but only on modified lines).
 (add-hook 'prog-mode-hook 'ethan-wspace-mode)
 
-;; whitespace.el with Unicode support
-(require-package 'unicode-whitespace)
-
-;; Show trailing whitespace
-(setq-default show-trailing-whitespace t)
+;; ethan-wspace prevents use of tabs in Makefiles; correct that behavior
+(add-hook 'makefile-mode-hook
+          (lambda ()
+            (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors))))
 
 
 (provide 'ndhoule-whitespace)

@@ -2,20 +2,20 @@
 
 ;;; Commentary:
 ;;
-;; Like snippets? You're gonna love this file.
+;; They're snippets. Enough said.
 
 ;;; Code:
 
 (require-package 'yasnippet)
+(require-package 'angular-snippets)
+
 (yas-global-mode t)
-
-;; ;; Develop and keep personal snippets under ~/emacs.d/mysnippets
-(yas-load-directory "~/.emacs.d/snippets")
-
 (setq yas-indent-line 'fixed)
 
-(require-package 'angular-snippets)
 (require 'angular-snippets)
+(yas-load-directory
+ (expand-file-name "snippets" user-emacs-directory))
+
 
 (provide 'ndhoule-yasnippet)
 ;;; ndhoule-yasnippet.el ends here

@@ -17,7 +17,6 @@
 
                                     ;; Plugin settings
                                     ndhoule-ace
-                                    ndhoule-buffer
                                     ndhoule-color
                                     ndhoule-editorconfig
                                     ndhoule-emmet
@@ -26,36 +25,40 @@
                                     ndhoule-font
                                     ndhoule-general
                                     ndhoule-git
+                                    ndhoule-ibuffer
                                     ndhoule-ido
-                                    ndhoule-keybindings
                                     ndhoule-linum
                                     ndhoule-osx
                                     ndhoule-projectile
                                     ndhoule-smartparens
+                                    ndhoule-smex
                                     ndhoule-spell
                                     ndhoule-whitespace
                                     ndhoule-window
-                                    ndhoule-yaml
                                     ndhoule-yasnippet
 
                                     ;; Language settings
-                                    ndhoule-clojure
-                                    ndhoule-css
-                                    ndhoule-csv
-                                    ndhoule-haml
-                                    ndhoule-java
-                                    ndhoule-javascript
-                                    ndhoule-markdown
-                                    ndhoule-nginx
-                                    ndhoule-python
-                                    ndhoule-ruby
-                                    ndhoule-sgml
-                                    ndhoule-sml
+                                    ndhoule-lang-clojure
+                                    ndhoule-lang-css
+                                    ndhoule-lang-csv
+                                    ndhoule-lang-haml
+                                    ndhoule-lang-java
+                                    ndhoule-lang-javascript
+                                    ndhoule-lang-markdown
+                                    ndhoule-lang-nginx
+                                    ndhoule-lang-python
+                                    ndhoule-lang-ruby
+                                    ndhoule-lang-sgml
+                                    ndhoule-lang-sml
+                                    ndhoule-lang-yaml
 
                                     ;; Load last, as it relies on other plugins.
                                     ndhoule-auto-complete)
   "A list of personal configuration files to load at startup.")
 (mapc #'require ndhoule/standard-settings)
+
+(if window-system
+  (require 'ndhoule-gui))
 
 (defvar ndhoule/osx-settings '(ndhoule-osx)
   "A list of OS X-specific settings to load at startup.")

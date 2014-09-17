@@ -1,4 +1,4 @@
-;;; ndhoule-autocomplete.el -- auto-complete.el settings
+;;; ndhoule-autocomplete.el --- auto-complete.el settings
 
 ;;; Commentary:
 ;;

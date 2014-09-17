@@ -1,4 +1,4 @@
-;;; ndhoule-flycheck.el -- flycheck settings
+;;; ndhoule-flycheck.el --- flycheck settings
 
 ;;; Commentary:
 ;;
@@ -46,6 +46,7 @@ threaded system and the forced deferred makes errors never show
 up before you execute another command."
   (flycheck-clear-idle-change-timer)
   (flycheck-buffer-automatically 'idle-change))
+
 
 (provide 'ndhoule-flycheck)
 ;;; ndhoule-flycheck.el ends here

@@ -1,4 +1,4 @@
-;;; ndhoule-speedbar.el --- nginx settings
+;;; ndhoule-lang-nginx.el --- nginx settings
 
 ;;; Commentary:
 ;;
@@ -8,5 +8,6 @@
 
 (require-package 'nginx-mode)
 
-(provide 'ndhoule-nginx)
-;;; ndhoule-nginx.el ends here
+
+(provide 'ndhoule-lang-nginx)
+;;; ndhoule-lang-nginx.el ends here

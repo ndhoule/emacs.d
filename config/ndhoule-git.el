@@ -1,4 +1,4 @@
-;;; ndhoule-git.el -- Git-related settings
+;;; ndhoule-git.el --- Git-related settings
 
 ;;; Commentary:
 ;;
@@ -12,7 +12,7 @@
 (require-package 'gitignore-mode)
 (require-package 'github-browse-file)
 
-;; Break commit lines at 72 characters
+;; Break commit messages at 72 characters
 (add-hook 'magit-log-edit-mode-hook
           (lambda ()
             (set-fill-column 72)

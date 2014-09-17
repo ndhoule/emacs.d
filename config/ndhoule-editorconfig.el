@@ -1,4 +1,4 @@
-;;; ndhoule-editorconfig.el -- EditorConfig settings
+;;; ndhoule-editorconfig.el --- EditorConfig settings
 
 ;;; Commentary:
 ;;

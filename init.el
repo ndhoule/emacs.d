@@ -16,9 +16,9 @@
 (defconst *is-carbon-emacs* (eq window-system 'mac))
 (defconst *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
 
-;;;;;;;;;;;;;;
-;; Loadpath ;;
-;;;;;;;;;;;;;;
+;;;
+;;; Loadpath
+;;;
 
 ; Set the site-lisp directory as a variable to be used in other config files
 (setq site-lisp-dir

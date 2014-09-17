@@ -1,4 +1,4 @@
-;;; ndhoule-python.el -- Python settings
+;;; ndhoule-lang-python.el -- Python settings
 
 ;;; Commentary:
 ;;
@@ -11,9 +11,8 @@
 (eval-after-load 'python
   (progn
     (add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
-
-    ; Ignore binary files
     (add-to-list 'completion-ignored-extensions ".pyc")))
 
-(provide 'ndhoule-python)
-;;; ndhoule-python.el ends here
+
+(provide 'ndhoule-lang-python)
+;;; ndhoule-lang-python.el ends here

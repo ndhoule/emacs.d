@@ -1,4 +1,4 @@
-;;; ndhoule-css.el --- Settings for CSS/preprocessors
+;;; ndhoule-lang-css.el --- Settings for CSS/preprocessors
 
 ;;; Commentary:
 ;;
@@ -7,21 +7,18 @@
 ;;; Code:
 
 (require-package 'css-mode)
-
 (require-package 'less-css-mode)
-
-(require-package 'sws-mode)
-(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
-
 (require-package 'sass-mode)
-(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
-
 (require-package 'scss-mode)
+(require-package 'sws-mode)
+
+(add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
+(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
 (add-to-list 'auto-mode-alist '("\\.scss$" . scss-mode))
+
+(setq css-indent-offset 2)
 (setq scss-compile-at-save nil)
 
-;; Set CSS spacing to two characters
-(setq css-indent-offset 2)
 
-(provide 'ndhoule-css)
-;;; ndhoule-css.el ends here
+(provide 'ndhoule-lang-css)
+;;; ndhoule-lang-css.el ends here

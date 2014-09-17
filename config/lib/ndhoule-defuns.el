@@ -1,4 +1,4 @@
-;;; ndhoule-defuns.el -- Function definitions
+;;; ndhoule-defuns.el --- Function definitions
 
 ;;; Commentary:
 ;;
@@ -28,6 +28,7 @@
                       (read-shell-command "Open current file with: "))
                     " "
                     buffer-file-name))))
+
 
 (provide 'ndhoule-defuns)
 ;;; ndhoule-defuns.el ends here

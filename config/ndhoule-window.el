@@ -1,8 +1,8 @@
-;;; ndhoule-window.el -- Settings related to window management
+;;; ndhoule-window.el --- Window management settings
 
 ;;; Commentary:
 ;;
-;; Control Emacs' behavior when opening or closing windows
+;; Control the way Emacs opens and closes windows
 
 ;;; Code:
 

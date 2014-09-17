@@ -1,4 +1,4 @@
-;;; ndhoule-ruby.el -- Ruby settings
+;;; ndhoule-lang-ruby.el -- Ruby settings
 
 ;;; Commentary:
 ;;
@@ -30,5 +30,6 @@
 
     (setq ruby-deep-indent-paren nil)))
 
-(provide 'ndhoule-ruby)
-;;; ndhoule-ruby.el ends here
+
+(provide 'ndhoule-lang-ruby)
+;;; ndhoule-lang-ruby.el ends here

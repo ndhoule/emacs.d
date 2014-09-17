@@ -1,4 +1,4 @@
-;;; ndhoule-markdown.el -- Markdown settings
+;;; ndhoule-lang-markdown.el -- Markdown settings
 
 ;;; Commentary:
 ;;
@@ -10,10 +10,12 @@
 
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
-(add-hook 'markdown-mode-hook (lambda () (auto-fill-mode t)))
+(add-hook 'markdown-mode-hook
+          (lambda () (auto-fill-mode t)))
 
-; TODO: If `markdown2' doesn't exist, use `markdown'
+;; TODO: If `markdown2' doesn't exist, use `markdown'
 (setq markdown-command "markdown2 -x fenced-code-blocks")
 
-(provide 'ndhoule-markdown)
-;;; ndhoule-markdown.el ends here
+
+(provide 'ndhoule-lang-markdown)
+;;; ndhoule-lang-markdown.el ends here

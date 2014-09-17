@@ -1,4 +1,4 @@
-;;; ndhoule-java.el -- Java settings
+;;; ndhoule-lang-java.el -- Java settings
 
 ;;; Commentary:
 ;;
@@ -25,5 +25,6 @@
 (setq auto-mode-alist
       (append '(("\\.java\\'" . jde-mode)) auto-mode-alist))
 
-(provide 'ndhoule-java)
-;;; ndhoule-java.el ends here
+
+(provide 'ndhoule-lang-java)
+;;; ndhoule-lang-java.el ends here

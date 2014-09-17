@@ -1,9 +1,9 @@
-;;; ndhoule-buffer.el - ibuffer-related settings
+;;; ndhoule-ibuffer.el --- ibuffer-related settings
+
+;;; Commentary:
 ;;
-;;; Discussion:
-;;
-;; Put all code related to buffers/ibuffer in here.
-;;
+;; All code related to ibuffer goes in here.
+
 ;;; Code:
 
 (setq ibuffer-expert t)
@@ -12,4 +12,6 @@
 (setq ibuffer-maybe-show-predicates '("^\\*.*\\*$"))
 (setq ibuffer-never-show-predicates '("^ "))
 
-(provide 'ndhoule-buffer)
+
+(provide 'ndhoule-ibuffer)
+;;; ndhoule-ibuffer.el ends here

@@ -15,9 +15,6 @@
 ;; Highlight matching pairs
 (show-smartparens-global-mode t)
 
-;; Related: Pretty parens!
-(require-package 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
 
 (provide 'ndhoule-smartparens)
 ;;; ndhoule-smartparens.el ends here

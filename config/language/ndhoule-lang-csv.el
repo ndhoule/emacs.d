@@ -1,4 +1,4 @@
-;;; ndhoule-csv.el --- CSV-related settings
+;;; ndhoule-lang-csv.el --- CSV-related settings
 
 ;;; Commentary:
 ;;
@@ -8,5 +8,6 @@
 
 (require-package 'csv-mode)
 
-(provide 'ndhoule-csv)
-;;; ndhoule-csv.el ends here
+
+(provide 'ndhoule-lang-csv)
+;;; ndhoule-lang-csv.el ends here

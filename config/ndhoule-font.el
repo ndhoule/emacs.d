@@ -1,4 +1,4 @@
-;;; ndhoule-font.el -- Font settings
+;;; ndhoule-font.el --- Font settings
 
 ;;; Commentary:
 ;;
@@ -14,6 +14,7 @@
 
 ;; Line spacing crowds in non-terminal Emacs, expand spacing between lines
 (setq-default line-spacing 2)
+
 
 (provide 'ndhoule-font)
 ;;; ndhoule-font.el ends here

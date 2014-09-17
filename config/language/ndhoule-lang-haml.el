@@ -1,4 +1,4 @@
-;;; ndhoule-haml.el --- HAML-related settings
+;;; ndhoule-lang-haml.el --- HAML-related settings
 
 ;;; Commentary:
 ;;
@@ -8,5 +8,6 @@
 
 (require-package 'haml-mode)
 
-(provide 'ndhoule-haml)
-;;; ndhoule-haml.el ends here
+
+(provide 'ndhoule-lang-haml)
+;;; ndhoule-lang-haml.el ends here

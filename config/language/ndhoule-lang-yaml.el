@@ -1,4 +1,4 @@
-;;; ndhoule-yaml.el --- YAML-related settings
+;;; ndhoule-lang-yaml.el --- YAML-related settings
 
 ;;; Commentary:
 ;;
@@ -8,5 +8,6 @@
 
 (require-package 'yaml-mode)
 
-(provide 'ndhoule-yaml)
-;;; ndhoule-yaml.el ends here
+
+(provide 'ndhoule-lang-yaml)
+;;; ndhoule-lang-yaml.el ends here

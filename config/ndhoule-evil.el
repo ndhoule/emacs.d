@@ -1,8 +1,8 @@
-;;; ndhoule-evil.el -- All settings related to evil mode
+;;; ndhoule-evil.el --- All settings related to evil mode
 
 ;;; Commentary:
 ;;
-;; Sorry Emacs, I'll never get used to chords after using Vim.
+;; Sorry Emacs, I'll never get used to chords.
 
 ;;; Code:
 
@@ -13,10 +13,11 @@
 (require-package 'evil-surround)
 
 (evil-mode 1)
-(setq evil-default-cursor t)
 (global-evil-leader-mode)
 (global-evil-surround-mode 1)
+
 (evil-leader/set-leader ",")
+(setq evil-default-cursor t)
 
 ;; Use ; as :
 (define-key evil-normal-state-map (kbd ";") 'evil-ex)

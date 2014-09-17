@@ -1,4 +1,4 @@
-;;; ndhoule-speedbar.el --- Clojure settings
+;;; ndhoule-lang-clojure.el --- Clojure settings
 
 ;;; Commentary:
 ;;
@@ -12,5 +12,6 @@
 
 (add-hook 'clojure-mode-hook 'evil-paredit-mode)
 
-(provide 'ndhoule-clojure)
-;;; ndhoule-clojure.el ends here
+
+(provide 'ndhoule-lang-clojure)
+;;; ndhoule-lang-clojure.el ends here

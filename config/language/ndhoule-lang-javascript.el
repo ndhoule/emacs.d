@@ -1,4 +1,4 @@
-;;; ndhoule-javascript.el -- JavaScript settings
+;;; ndhoule-lang-javascript.el -- JavaScript settings
 ;;
 ;;; Commentary:
 ;;
@@ -57,5 +57,6 @@
 ;; Enterprise, go!
 (add-hook 'js-mode-hook (lambda () (ndhoule/js-mode-hook)))
 
-(provide 'ndhoule-javascript)
-;;; ndhoule-javascript.el ends here
+
+(provide 'ndhoule-lang-javascript)
+;;; ndhoule-lang-javascript.el ends here
