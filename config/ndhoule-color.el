@@ -7,19 +7,24 @@
 
 ;;; Code:
 
-;; Themes
 (require-package 'base16-theme)
-
-;; Set default font
-(setq-default line-spacing 2)
-(set-face-attribute 'default nil :family "DejaVu Sans Mono"
-                    :height 120 :weight 'normal)
+(require-package 'cyberpunk-theme)
 
 ;; Set default theme
 (load-theme 'base16-default t)
 
-;; Show the column/line number in the modeline
-(setq column-number-mode t)
+;; Set default font
+(set-face-attribute 'default nil
+                    :family "DejaVu Sans Mono"
+                    :height 120
+                    :weight 'normal)
+
+;; Line spacing crowds in non-terminal Emacs, expand spacing between lines
+(setq-default line-spacing 2)
+
+;;;
+;;; Line Coloration
+;;;
 
 ;; Highlight the current line
 (global-hl-line-mode 1)
@@ -32,4 +37,4 @@
 
 
 (provide 'ndhoule-color)
-;;; ndhoule-color.el ends here.
+;;; ndhoule-color.el ends here
