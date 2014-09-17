@@ -28,16 +28,10 @@
 ;; Autoreload files on change
 (global-auto-revert-mode t)
 
-; https://github.com/alpaker/Fill-Column-Indicator/issues/31
-;; Enable 80-character warning
-;(require-package 'fill-column-indicator)
-;(setq-default fill-column 100)
-;(setq fci-rule-column 80)
-;(setq fci-rule-width 1)
-;(setq fci-rule-color "darkblue")
-;(define-globalized-minor-mode global-fci-mode fci-mode
-;                              (lambda () (fci-mode t)))
-;(global-fci-mode t)
+;; Highlight columns that exceed 100 characters
+(require-package 'column-enforce-mode)
+(add-hook 'prog-mode-hook 'column-enforce-mode)
+(setq column-enforce-column 100)
 
 ;; Prevent scrolling from jumping half-pages at a time
 (require-package 'smooth-scrolling)
@@ -45,6 +39,7 @@
   '(progn
      (setq smooth-scroll-margin 5)
      nil))
+
 
 (provide 'ndhoule-general)
 ;;; ndhoule-general.el ends here
