@@ -11,8 +11,6 @@
 (require 'smartparens-config)
 
 (smartparens-global-mode t)
-
-;; Highlight matching pairs
 (show-smartparens-global-mode t)
 
 

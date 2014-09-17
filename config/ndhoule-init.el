@@ -30,6 +30,7 @@
                                     ndhoule-linum
                                     ndhoule-osx
                                     ndhoule-projectile
+                                    ndhoule-rainbow-delimiters
                                     ndhoule-smartparens
                                     ndhoule-smex
                                     ndhoule-spell
