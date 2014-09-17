@@ -23,8 +23,8 @@
                                     ndhoule-editorconfig
                                     ndhoule-emmet
                                     ndhoule-evil
-                                    ndhoule-projectile
                                     ndhoule-flycheck
+                                    ndhoule-font
                                     ndhoule-general
                                     ndhoule-git
                                     ndhoule-haml
@@ -36,6 +36,7 @@
                                     ndhoule-markdown
                                     ndhoule-nginx
                                     ndhoule-osx
+                                    ndhoule-projectile
                                     ndhoule-python
                                     ndhoule-ruby
                                     ndhoule-sgml
