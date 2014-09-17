@@ -9,5 +9,6 @@
 (require-package 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 
+
 (provide 'ndhoule-rainbowparens)
 ;;; ndhoule-rainbowparens.el ends here
