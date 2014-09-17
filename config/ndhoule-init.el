@@ -43,6 +43,7 @@
                                     ndhoule-sml
                                     ndhoule-spell
                                     ndhoule-whitespace
+                                    ndhoule-window
                                     ndhoule-yaml
                                     ndhoule-yasnippet
 
