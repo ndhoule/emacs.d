@@ -10,14 +10,15 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
-;; Always indent on enter
+;; Always indent on return
 (electric-indent-mode 1)
 
-;; Ensure trailing newline at end of files
-(setq require-final-newline t)
-
-;; Delete trailing whitespace before saving (but only on lines I've modified)
+;; NOTE: `ethan-wspace' automatically adds a newline to EOF; if we didn't have it, we'd want to set
+;; `require-final-newline' to `t'
 (require-package 'ethan-wspace)
+(setq mode-require-final-newline nil)
+
+;; Delete trailing whitespace before saving (but only on modified lines).
 (add-hook 'prog-mode-hook 'ethan-wspace-mode)
 
 ;; whitespace.el with Unicode support
@@ -26,10 +27,6 @@
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
 
-(require-package 'highlight-chars)
-
-;; Highlight special characters
-;(add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
 
 (provide 'ndhoule-whitespace)
 ;;; ndhoule-whitespace.el ends here
