@@ -7,8 +7,6 @@
 
 ;;; Code:
 
-(require-package 'rainbow-delimiters)
-
 ;; Themes
 (require-package 'base16-theme)
 
@@ -30,6 +28,7 @@
 
 ;; Make area select color nicer
 (set-face-background 'region "#595959")
+
 
 (provide 'ndhoule-color)
 ;;; ndhoule-color.el ends here.
