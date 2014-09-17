@@ -11,15 +11,14 @@
 ;; https://github.com/technomancy/better-defaults
 (require-package 'better-defaults)
 
-(defvar ndhoule/standard-settings '(ndhoule-macros
+(defvar ndhoule/standard-settings '(;; Library code
+                                    ndhoule-macros
                                     ndhoule-defuns
 
+                                    ;; Plugin settings
                                     ndhoule-ace
                                     ndhoule-buffer
-                                    ndhoule-clojure
                                     ndhoule-color
-                                    ndhoule-css
-                                    ndhoule-csv
                                     ndhoule-editorconfig
                                     ndhoule-emmet
                                     ndhoule-evil
@@ -27,26 +26,31 @@
                                     ndhoule-font
                                     ndhoule-general
                                     ndhoule-git
-                                    ndhoule-haml
                                     ndhoule-ido
-                                    ndhoule-java
-                                    ndhoule-javascript
                                     ndhoule-keybindings
                                     ndhoule-linum
-                                    ndhoule-markdown
-                                    ndhoule-nginx
                                     ndhoule-osx
                                     ndhoule-projectile
-                                    ndhoule-python
-                                    ndhoule-ruby
-                                    ndhoule-sgml
                                     ndhoule-smartparens
-                                    ndhoule-sml
                                     ndhoule-spell
                                     ndhoule-whitespace
                                     ndhoule-window
                                     ndhoule-yaml
                                     ndhoule-yasnippet
+
+                                    ;; Language settings
+                                    ndhoule-clojure
+                                    ndhoule-css
+                                    ndhoule-csv
+                                    ndhoule-haml
+                                    ndhoule-java
+                                    ndhoule-javascript
+                                    ndhoule-markdown
+                                    ndhoule-nginx
+                                    ndhoule-python
+                                    ndhoule-ruby
+                                    ndhoule-sgml
+                                    ndhoule-sml
 
                                     ;; Load last, as it relies on other plugins.
                                     ndhoule-auto-complete)
