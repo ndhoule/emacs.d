@@ -6,8 +6,6 @@
 
 ;;; Code:
 
-(require-package 'python-mode)
-
 (eval-after-load 'python
   (progn
     (add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
