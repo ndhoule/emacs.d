@@ -25,3 +25,4 @@ flycheck_*.el
 ac-comphist.dat
 abbrev_defs
 semanticdb
+var
