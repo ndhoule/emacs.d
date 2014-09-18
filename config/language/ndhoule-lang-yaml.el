@@ -8,6 +8,7 @@
 
 (require-package 'yaml-mode)
 
+(add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
 
 (provide 'ndhoule-lang-yaml)
 ;;; ndhoule-lang-yaml.el ends here

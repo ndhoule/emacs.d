@@ -8,7 +8,6 @@
 
 (eval-after-load 'python
   (progn
-    (add-to-list 'auto-mode-alist '("\\.sls$" . yaml-mode))
     (add-to-list 'completion-ignored-extensions ".pyc")))
 
 
