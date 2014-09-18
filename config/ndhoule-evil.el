@@ -33,7 +33,7 @@
 
 (evil-leader/set-key
   "ra"      'rainbow-delimiters-mode
-  "cu"      'clean-up-buffer-or-region
+  "cu"      'ndhoule/clean-up-buffer-or-region
   "re"      'linum-relative-toggle
   "t"       'projectile-find-file
   "x"       'execute-extended-command
@@ -61,7 +61,7 @@
 
   ;; File management
   "n"       'sr-speedbar-toggle
-  "o"       'open-file-with)
+  "o"       'ndhoule/open-file-with)
 
 
 (provide 'ndhoule-evil)

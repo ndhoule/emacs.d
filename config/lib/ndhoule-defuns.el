@@ -6,7 +6,7 @@
 
 ;;; Code:
 
-(defun clean-up-buffer-or-region ()
+(defun ndhoule/clean-up-buffer-or-region ()
   "Untabifies, indents and deletes trailing whitespace from buffer or region."
   (interactive)
   (save-excursion
@@ -18,7 +18,7 @@
       (narrow-to-region (region-beginning) (region-end))
       (delete-trailing-whitespace))))
 
-(defun open-file-with ()
+(defun ndhoule/open-file-with ()
   "Simple function that allows us to open the underlying file of a buffer in an external program."
   (interactive)
   (when buffer-file-name
