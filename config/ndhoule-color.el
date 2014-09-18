@@ -14,7 +14,7 @@
 (require-package 'cyberpunk-theme)
 
 ;; Set default theme
-(load-theme 'base16-default t)
+(load-theme 'cyberpunk t)
 
 ;;;
 ;;; Line Coloration
@@ -38,6 +38,13 @@
 ;; Highlight columns that exceed 100 characters
 (setq column-enforce-column 100)
 (add-hook 'prog-mode-hook 'column-enforce-mode)
+
+;;;
+;;; Todos Highlighting
+;;;
+
+(require-package 'fixmee)
+(global-fixmee-mode 1)
 
 
 (provide 'ndhoule-color)

@@ -48,11 +48,8 @@
   ;; Fix Evil's < and > indentation
   (setq evil-shift-width preferred-javascript-indent-level)
 
-  ;; Highlight keywords like TODO, etc.
-  (lambda ()
-    (hs-minor-mode 1)
-    (font-lock-add-keywords nil
-                            '(("\\<\\(XXX\\|FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+  ;; Code folding support
+  (hs-minor-mode 1))
 
 ;; Enterprise, go!
 (add-hook 'js-mode-hook (lambda () (ndhoule/js-mode-hook)))
