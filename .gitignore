@@ -21,7 +21,7 @@ savefile/
 /prelude-modules.el
 projectile-bookmarks.eld
 session*
-flycheck-*.el
+flycheck_*.el
 ac-comphist.dat
 abbrev_defs
 semanticdb

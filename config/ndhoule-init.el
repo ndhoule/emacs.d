@@ -25,7 +25,6 @@
                                     ndhoule-font
                                     ndhoule-general
                                     ndhoule-git
-                                    ndhoule-ibuffer
                                     ndhoule-ido
                                     ndhoule-linum
                                     ndhoule-osx
