@@ -8,7 +8,7 @@
 
 (require-package 'clojure-mode)
 (require-package 'cider)
-(require-package 'ac-nrepl)
+(require-package 'ac-cider)
 
 (add-hook 'clojure-mode-hook 'evil-paredit-mode)
 
