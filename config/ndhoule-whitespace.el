@@ -26,6 +26,15 @@
           (lambda ()
             (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors))))
 
+;;;
+;;; Whitespace Highlighting
+;;;
+
+(require-package 'unicode-whitespace)
+(unicode-whitespace-setup 'subdued-faces)
+(setq whitespace-style '(face tabs tab-mark))
+(global-whitespace-mode)
+
 
 (provide 'ndhoule-whitespace)
 ;;; ndhoule-whitespace.el ends here
