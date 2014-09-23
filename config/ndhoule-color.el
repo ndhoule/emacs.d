@@ -14,7 +14,7 @@
 (require-package 'cyberpunk-theme)
 
 ;; Set default theme
-(load-theme 'cyberpunk t)
+(load-theme 'base16-default t)
 
 ;;;
 ;;; Line Coloration
