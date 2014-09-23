@@ -38,6 +38,7 @@
                                     ndhoule-yasnippet
 
                                     ;; Language settings
+                                    ndhoule-lang-asciidoc
                                     ndhoule-lang-clojure
                                     ndhoule-lang-css
                                     ndhoule-lang-csv
