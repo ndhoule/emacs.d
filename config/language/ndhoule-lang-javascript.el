@@ -11,10 +11,16 @@
 (require-package 'js2-mode)
 (require-package 'requirejs-mode)
 
+;; Ensure we use js-mode rather than the built-in (outdated) javascript-mode
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 ;; Don't use `json-mode' since it can't JSON worth a shit
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
-(defvar preferred-javascript-indent-level 2)
+(defvar ndhoule/preferred-javascript-indent-level 2)
+
+(setq js-indent-level ndhoule/preferred-javascript-indent-level)
+(setq js2-indent-level ndhoule/preferred-javascript-indent-level)
+(setq js2-basic-offset ndhoule/preferred-javascript-indent-level)
 
 ;; Tern
 (add-to-list 'load-path (expand-file-name "tern/emacs" site-lisp-dir))
@@ -27,16 +33,12 @@
         (setq tern-ac-on-dot nil)
         (tern-ac-setup))))
 
-;; Ensure we use js-mode rather than the built-in (outdated) javascript-mode
-(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
-
 (defun ndhoule/js-mode-hook ()
   "Hook for setting `js-mode' defaults and enabling `js2-minor-mode'."
 
   (js2-minor-mode 1)
 
   ;; Set sane indentation defaults
-  (setq js-indent-level preferred-javascript-indent-level)
   (setq js2-pretty-multiline-declarations t)
 
   (setq js2-highlight-external-variables nil)
@@ -46,7 +48,7 @@
   (tern-mode t)
 
   ;; Fix Evil's < and > indentation
-  (setq evil-shift-width preferred-javascript-indent-level)
+  (setq evil-shift-width ndhoule/preferred-javascript-indent-level)
 
   ;; Code folding support
   (hs-minor-mode 1))
