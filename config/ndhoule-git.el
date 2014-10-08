@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 ;;
-;; Settings related to git-gutter, magit, etc go in here.
+;; Settings related to git, magit, etc go in here.
 
 ;;; Code:
 
@@ -18,9 +18,40 @@
             (set-fill-column 72)
             (auto-fill-mode t)))
 
+;;;
+;;; gist.el
+;;;
+
+;; This package allows you to create Gists on GitHub directly from Emacs.
 ;;
-;; evil-mode keybindings
+;; Configuration:
 ;;
+;; Set the following lines in your ~/.gitconfig:
+;;
+;; ```
+;; [github]
+;;   user = your-username
+;;   password = your-personal-access-token
+;;   oauth-token = your-personal-access-token
+;; ```
+;;
+;; Or, better, put the above lines in `~/.gitconfig.private' and put these lines in your
+;; `~/.gitconfig', instead, so you don't inadvertently commit a token to your dotfiles repo:
+;;
+;; ```
+;; [include]
+;;   path = ~/.gitconfig.private
+;; ```
+;;
+;; Note: If you use a personal access token (https://github.com/settings/applications) rather than a
+;; raw password, this will a) limit access to gists only, and b) work with two-factor authentication
+;; enabled.
+
+(require-package 'gist)
+
+;;;
+;;; evil-mode keybindings
+;;;
 
 (require 'ndhoule-evil)
 
@@ -39,6 +70,9 @@
 (evil-add-hjkl-bindings magit-branch-manager-mode-map 'emacs
   "K" 'magit-discard-item
   "L" 'magit-key-mode-popup-logging)
+
+(evil-leader/set-key
+  "gst" 'magit-status)
 
 
 (provide 'ndhoule-git)
