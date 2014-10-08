@@ -31,6 +31,7 @@
 (define-key evil-visual-state-map (kbd ";") 'evil-ex)
 (define-key evil-motion-state-map (kbd ";") 'evil-ex)
 
+;; TODO: Move plugin-specific bindings to their config files
 (evil-leader/set-key
   "ra"      'rainbow-delimiters-mode
   "cu"      'ndhoule/clean-up-buffer-or-region
