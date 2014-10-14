@@ -13,8 +13,26 @@
 ;; on OS X.)
 (exec-path-from-shell-initialize)
 
+(defun ndhoule/pb-copy ()
+  "Copies the currently selected text to the OS clipboard."
+  (interactive)
+  (when mark-active
+    (shell-command-on-region
+     (point) (mark) "pbcopy")
+    (kill-buffer "*Shell Command Output*")
+    (princ "Copied selection to OS clipboard.")))
+
+(defun ndhoule/pb-paste ()
+  "Pastes whatever is in the OS clipboard."
+  (interactive)
+  (shell-command-on-region
+    (point)
+    (if mark-active (mark) (point)) "pbpaste" nil t))
+
 (evil-leader/set-key
-  "da" 'dash-at-point)
+  "da" 'dash-at-point
+  "y"  'ndhoule/pb-copy
+  "p"  'ndhoule/pb-paste)
 
 (provide 'ndhoule-osx)
 ;;; ndhoule-osx.el ends here
