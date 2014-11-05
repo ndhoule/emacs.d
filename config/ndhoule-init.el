@@ -46,6 +46,7 @@
                                     ndhoule-lang-clojure
                                     ndhoule-lang-css
                                     ndhoule-lang-csv
+                                    ndhoule-lang-go
                                     ndhoule-lang-haml
                                     ndhoule-lang-java
                                     ndhoule-lang-javascript
