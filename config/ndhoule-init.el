@@ -42,6 +42,7 @@
                                     ndhoule-yasnippet
 
                                     ;; Language settings
+                                    ;; TODO: Load these automatically
                                     ndhoule-lang-asciidoc
                                     ndhoule-lang-clojure
                                     ndhoule-lang-css
