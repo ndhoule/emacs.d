@@ -31,6 +31,7 @@
                                     ndhoule-ido
                                     ndhoule-linum
                                     ndhoule-osx
+                                    ndhoule-powerline
                                     ndhoule-projectile
                                     ndhoule-rainbow-delimiters
                                     ndhoule-smartparens
