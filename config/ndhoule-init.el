@@ -57,6 +57,7 @@
                                     ndhoule-lang-sgml
                                     ndhoule-lang-sml
                                     ndhoule-lang-yaml
+                                    ndhoule-lang-sh
 
                                     ;; Load last, as it relies on other plugins.
                                     ndhoule-auto-complete)
