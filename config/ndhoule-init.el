@@ -15,7 +15,10 @@
                                     ndhoule-macros
                                     ndhoule-defuns
 
-                                    ;; Plugin settings
+                                    ;; Load first
+                                    ndhoule-diminish
+
+                                    ;; Configuration
                                     ndhoule-ace
                                     ndhoule-color
                                     ndhoule-editorconfig

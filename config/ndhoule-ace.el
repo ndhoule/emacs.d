@@ -6,16 +6,21 @@
 
 ;;; Code:
 
-(require-package 'ace-jump-mode)
-
-;;
-;; evil-mode keybindings
-;;
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
 
 (require 'ndhoule-evil)
 
-(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
+;;;;;;;;;;;;;;;;;;;
+;;; Keybindings ;;;
+;;;;;;;;;;;;;;;;;;;
 
+(define-key evil-normal-state-map (kbd "SPC") 'evil-ace-jump-word-mode)
+
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-ace)
 ;;; ndhoule-ace.el ends here
