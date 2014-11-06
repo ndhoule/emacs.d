@@ -2,19 +2,10 @@
 
 ;;; Commentary:
 ;;
-;; Any settings related to font theming and (cosmetic) coloration go in here.
+;; Any settings related to cosmetic line coloration/display go in here.
+;; TODO: Rename this file
 
 ;;; Code:
-
-;;;
-;;; Themes
-;;;
-
-(require-package 'base16-theme)
-(require-package 'cyberpunk-theme)
-
-;; Set default theme
-(load-theme 'base16-default t)
 
 ;;;
 ;;; Line Coloration
@@ -46,6 +37,9 @@
 (require-package 'fixmee)
 (global-fixmee-mode 1)
 
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-color)
 ;;; ndhoule-color.el ends here

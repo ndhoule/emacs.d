@@ -10,12 +10,20 @@
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
+
 (require-package 'ido)
 (require-package 'flx-ido)
 (require-package 'ido-complete-space-or-hyphen)
 (require-package 'ido-hacks)
 (require-package 'ido-ubiquitous)
 (require-package 'ido-vertical-mode)
+
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
 
 (ido-mode t)
 (flx-ido-mode 1)
@@ -32,6 +40,9 @@
         (let ((ido-ubiquitous-enable-compatibility nil))
           ad-do-it))))
 
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-ido)
 ;;; ndhoule-ido.el ends here

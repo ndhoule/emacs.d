@@ -2,9 +2,13 @@
 
 ;;; Commentary:
 ;;
-;; Control the way Emacs opens and closes windows
+;; Control the way Emacs opens and closes windows.
 
 ;;; Code:
+
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
 
 ;; Automatically rebalance windows after splitting panes, or when closing panes
 (defadvice split-window-below (after restore-balance-below activate)
@@ -16,6 +20,9 @@
 (defadvice delete-window (after restore-balance activate)
   (balance-windows))
 
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-window)
 ;;; ndhoule-window.el ends here

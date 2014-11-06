@@ -18,6 +18,7 @@
       (narrow-to-region (region-beginning) (region-end))
       (delete-trailing-whitespace))))
 
+;; TODO: Make this work cross-platform (e.g. use xdg-open on Linux)
 (defun ndhoule/open-file-with ()
   "Simple function that allows us to open the underlying file of a buffer in an external program."
   (interactive)

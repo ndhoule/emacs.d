@@ -6,16 +6,30 @@
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
+
 (require-package 'yasnippet)
 (require-package 'angular-snippets)
 
-(yas-global-mode t)
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
+
+;; TODO: This isn't quite right
 (setq yas-indent-line 'fixed)
 
 (require 'angular-snippets)
+
 (yas-load-directory
  (expand-file-name "snippets" user-emacs-directory))
 
+(yas-global-mode t)
+
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-yasnippet)
 ;;; ndhoule-yasnippet.el ends here

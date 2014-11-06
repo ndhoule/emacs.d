@@ -6,13 +6,17 @@
 
 ;;; Code:
 
-;;;
-;;; Keybindings
-;;;
+;;;;;;;;;;;;;;;;;;;
+;;; Keybindings ;;;
+;;;;;;;;;;;;;;;;;;;
 
+;; TODO: Under Linux, we probably prefer C-+/- to Super-+/-
 (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "s-_") 'text-scale-decrease)
 
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-gui)
 ;;; ndhoule-gui.el ends here

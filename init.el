@@ -11,11 +11,6 @@
 (unless (server-running-p)
   (server-start))
 
-;; Helpful constants for OS-specific settings
-(defconst *is-a-mac* (eq system-type 'darwin))
-(defconst *is-carbon-emacs* (eq window-system 'mac))
-(defconst *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
-
 ;;;
 ;;; Loadpath
 ;;;

@@ -2,17 +2,28 @@
 
 ;;; Commentary:
 ;;
-;; Never close your own pairs again, you lazy git.
+;; Never close your own pairs again.
 ;; https://github.com/Fuco1/smartparens/wiki
 
 ;;; Code:
 
-(require-package 'smartparens)
-(require 'smartparens-config)
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
 
+(require-package 'smartparens)
+
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
+
+(require 'smartparens-config)
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-smartparens)
 ;;; ndhoule-smartparens.el ends here

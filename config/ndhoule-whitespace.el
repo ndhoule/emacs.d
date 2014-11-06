@@ -6,16 +6,35 @@
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
+
+(require-package 'ethan-wspace)
+(require-package 'unicode-whitespace)
+
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
+
 ;; Use two spaces as a tab
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
 ;; Always indent on return
-(electric-indent-mode 1)
+(electric-indent-mode t)
+
+;; Highlight trailing and unwanted whitespace
+(unicode-whitespace-setup 'subdued-faces)
+(setq whitespace-style '(face
+                         tabs
+                         tab-mark))
+(global-whitespace-mode)
+
+;; TODO: Replace `ethan-wspace' with a better package (it's pretty finicky)
 
 ;; NOTE: `ethan-wspace' automatically adds a newline to EOF; if we didn't have it, we'd want to set
 ;; `require-final-newline' to `t'
-(require-package 'ethan-wspace)
 (setq mode-require-final-newline nil)
 
 ;; Delete trailing whitespace before saving (but only on modified lines).
@@ -26,15 +45,9 @@
           (lambda ()
             (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors))))
 
-;;;
-;;; Whitespace Highlighting
-;;;
-
-(require-package 'unicode-whitespace)
-(unicode-whitespace-setup 'subdued-faces)
-(setq whitespace-style '(face tabs tab-mark))
-(global-whitespace-mode)
-
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-whitespace)
 ;;; ndhoule-whitespace.el ends here

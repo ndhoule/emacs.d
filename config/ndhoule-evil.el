@@ -2,32 +2,33 @@
 
 ;;; Commentary:
 ;;
-;; Sorry, Emacs.
+;; Sorry, Emacs--chords blow.
 
 ;;; Code:
 
-;;;;;;;;;;;;;;;;;;
-;; Dependencies ;;
-;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
 
+(require 'ndhoule-defuns)
 (require-package 'evil)
 (require-package 'evil-leader)
 (require-package 'evil-nerd-commenter)
 (require-package 'evil-paredit)
 (require-package 'evil-surround)
 
-;;;;;;;;;;;;;;;;;;;
-;; Configuration ;;
-;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
 
 (evil-mode 1)
 (global-evil-leader-mode)
 (global-evil-surround-mode 1)
 (setq evil-default-cursor t)
 
-;;;;;;;;;;;;;;;;;
-;; Keybindings ;;
-;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;
+;;; Keybindings ;;;
+;;;;;;;;;;;;;;;;;;;
 
 (evil-leader/set-leader ",")
 
@@ -43,13 +44,9 @@
 (define-key evil-visual-state-map (kbd ";") 'evil-ex)
 (define-key evil-motion-state-map (kbd ";") 'evil-ex)
 
-;; TODO: Move plugin-specific bindings to their config files
 (evil-leader/set-key
-  "ra"      'rainbow-delimiters-mode
   "cu"      'ndhoule/clean-up-buffer-or-region
-  "re"      'linum-relative-toggle
-  "t"       'projectile-find-file
-  "x"       'execute-extended-command
+  "s"       'sort-lines
 
   ;; Folding
   "zf"      'hs-hide-block
@@ -68,17 +65,12 @@
   "bs"      'balance-windows
   "w"       'next-multiframe-window
 
-  ;; Flycheck
-  "en"      'flycheck-next-error
-  "ep"      'flycheck-previous-error
-
   ;; File management
-  "o"       'ndhoule/open-file-with
-  "s"       'sort-lines)
+  "o"       'ndhoule/open-file-with)
 
-;;;;;;;;;;;;
-;; Export ;;
-;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-evil)
 ;;; ndhoule-evil.el ends here

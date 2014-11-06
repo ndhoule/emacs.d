@@ -3,28 +3,9 @@
 ;;; Commentary:
 ;;
 ;; Settings related to git, magit, etc go in here.
-
-;;; Code:
-
-(require-package 'magit)
-(require-package 'git-commit-mode)
-(require-package 'gitconfig-mode)
-(require-package 'gitignore-mode)
-(require-package 'github-browse-file)
-
-;; Break commit messages at 72 characters
-(add-hook 'magit-log-edit-mode-hook
-          (lambda ()
-            (set-fill-column 72)
-            (auto-fill-mode t)))
-
-;;;
-;;; gist.el
-;;;
-
-;; This package allows you to create Gists on GitHub directly from Emacs.
 ;;
-;; Configuration:
+;;
+;; Note: To configure gist.el, do the following:
 ;;
 ;; Set the following lines in your ~/.gitconfig:
 ;;
@@ -47,14 +28,36 @@
 ;; raw password, this will a) limit access to gists only, and b) work with two-factor authentication
 ;; enabled.
 
-(require-package 'gist)
+;;; Code:
 
-;;;
-;;; evil-mode keybindings
-;;;
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
 
 (require 'ndhoule-evil)
+(require-package 'gist)
+(require-package 'git-commit-mode)
+(require-package 'gitconfig-mode)
+(require-package 'github-browse-file)
+(require-package 'gitignore-mode)
+(require-package 'magit)
 
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
+
+;; Break commit message lines at 72 characters
+(add-hook 'magit-log-edit-mode-hook (lambda ()
+                                      (set-fill-column 72)
+                                      (auto-fill-mode t)))
+
+;;;;;;;;;;;;;;;;;;;
+;;; Keybindings ;;;
+;;;;;;;;;;;;;;;;;;;
+
+(evil-leader/set-key "gst" 'magit-status)
+
+;; Configure magit's various modes to play nice with evil-mode
 (evil-add-hjkl-bindings *bc-menu-mode-map* 'emacs)
 (evil-add-hjkl-bindings magit-mode-map 'emacs)
 (evil-add-hjkl-bindings magit-diff-mode-map 'emacs)
@@ -71,9 +74,9 @@
   "K" 'magit-discard-item
   "L" 'magit-key-mode-popup-logging)
 
-(evil-leader/set-key
-  "gst" 'magit-status)
-
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-git)
 ;;; ndhoule-git.el ends here

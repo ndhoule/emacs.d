@@ -2,12 +2,19 @@
 
 ;;; Commentary:
 ;;
-;; Settings related to EditorConfig go in here.
+;; Settings related to editorconfig.el go in here.
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
+
 (require-package 'editorconfig)
 
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-editorconfig)
 ;;; ndhoule-editorconfig.el ends here

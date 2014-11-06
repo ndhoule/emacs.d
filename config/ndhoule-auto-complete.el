@@ -6,13 +6,18 @@
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
+
+(require 'ndhoule-evil)
 (require-package 'auto-complete)
 (require-package 'fuzzy)
 (require-package 'popup)
 
-;;;
-;;; Auto-Complete Settings
-;;;
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
 
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
@@ -55,9 +60,9 @@
                 yaml-mode))
   (add-to-list 'ac-modes mode))
 
-;;
-;; Keybindings
-;;
+;;;;;;;;;;;;;;;;;;;
+;;; Keybindings ;;;
+;;;;;;;;;;;;;;;;;;;
 
 (define-key ac-completing-map (kbd "TAB") 'ac-next)
 (define-key ac-completing-map (kbd "C-j") 'ac-next)
@@ -67,6 +72,9 @@
 (define-key ac-completing-map (kbd "ESC") 'evil-normal-state)
 (evil-make-intercept-map ac-completing-map)
 
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-auto-complete)
 ;;; ndhoule-auto-complete.el ends here

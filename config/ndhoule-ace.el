@@ -16,7 +16,7 @@
 ;;; Keybindings ;;;
 ;;;;;;;;;;;;;;;;;;;
 
-(define-key evil-normal-state-map (kbd "SPC") 'evil-ace-jump-word-mode)
+(define-key evil-normal-state-map (kbd "SPC") 'evil-ace-jump-char-mode)
 
 ;;;;;;;;;;;;;;
 ;;; Export ;;;

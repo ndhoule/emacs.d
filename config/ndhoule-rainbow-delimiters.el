@@ -6,9 +6,28 @@
 
 ;;; Code:
 
+;;;;;;;;;;;;;;;;;;;;
+;;; Dependencies ;;;
+;;;;;;;;;;;;;;;;;;;;
+
+(require 'ndhoule-evil)
 (require-package 'rainbow-delimiters)
+
+;;;;;;;;;;;;;;;;;;;;;
+;;; Configuration ;;;
+;;;;;;;;;;;;;;;;;;;;;
+
 (global-rainbow-delimiters-mode)
 
+;;;;;;;;;;;;;;;;;;;
+;;; Keybindings ;;;
+;;;;;;;;;;;;;;;;;;;
+
+(evil-leader/set-key "ra" 'rainbow-delimiters-mode)
+
+;;;;;;;;;;;;;;
+;;; Export ;;;
+;;;;;;;;;;;;;;
 
 (provide 'ndhoule-rainbow-delimiters)
 ;;; ndhoule-rainbow-delimiters.el ends here
