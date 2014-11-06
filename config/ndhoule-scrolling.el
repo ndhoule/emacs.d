@@ -16,6 +16,9 @@
 ;;; Configuration ;;;
 ;;;;;;;;;;;;;;;;;;;;;
 
+;; Disable scroll bars
+(scroll-bar-mode -1)
+
 ;; Prevent scrolling from jumping half-pages at a time
 (eval-after-load 'smooth-scrolling
   '(progn (setq smooth-scroll-margin 5) nil))
