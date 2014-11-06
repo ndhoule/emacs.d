@@ -17,7 +17,7 @@
 ;; Configuration ;;
 ;;;;;;;;;;;;;;;;;;;
 
-(powerline-evil-center-color-theme)
+(powerline-evil-vim-color-theme)
 
 ;;;;;;;;;;;;
 ;; Export ;;
