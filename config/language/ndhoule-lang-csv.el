@@ -6,8 +6,9 @@
 
 ;;; Code:
 
-(require-package 'csv-mode)
-
+(use-package csv-mode
+             :ensure t
+             :mode "\\.csv\\'")
 
 (provide 'ndhoule-lang-csv)
 ;;; ndhoule-lang-csv.el ends here

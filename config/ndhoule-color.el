@@ -1,10 +1,10 @@
 ;;; ndhoule-color.el --- Coloration and display settings
-
+;;
 ;;; Commentary:
 ;;
 ;; Any settings related to cosmetic line coloration/display go in here.
 ;; TODO: Rename this file
-
+;;
 ;;; Code:
 
 ;;;
@@ -24,22 +24,22 @@
 ;;; Line Length
 ;;;
 
-(require-package 'column-enforce-mode)
-
 ;; Highlight columns that exceed 100 characters
-(setq column-enforce-column 100)
-(add-hook 'prog-mode-hook 'column-enforce-mode)
+(use-package column-enforce-mode
+             :ensure t
+             :config
+             (setq column-enforce-column 100)
+             (add-hook 'prog-mode-hook 'column-enforce-mode))
 
 ;;;
-;;; Todos Highlighting
+;;; TODO/FIXME/XXX Highlighting
 ;;;
 
-(require-package 'fixmee)
-(global-fixmee-mode 1)
-
-;;;;;;;;;;;;;;
-;;; Export ;;;
-;;;;;;;;;;;;;;
+(use-package fixmee
+             :disabled t
+             :ensure t
+             :config
+             (global-fixmee-mode 1))
 
 (provide 'ndhoule-color)
 ;;; ndhoule-color.el ends here

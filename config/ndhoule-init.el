@@ -13,7 +13,8 @@
 
 ;; Use Better Defaults as a basis for configuration
 ;; https://github.com/technomancy/better-defaults
-(require-package 'better-defaults)
+(use-package better-defaults
+             :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;; Configuration ;;;
@@ -52,23 +53,24 @@
   "A list of dependencies to load before any language-specific configuration.")
 
 ;; TODO: Load all files in the `languages' folder automatically
-(defvar ndhoule/deps-lang '(ndhoule-lang-asciidoc
-                            ndhoule-lang-clojure
-                            ndhoule-lang-css
-                            ndhoule-lang-csv
-                            ndhoule-lang-go
-                            ndhoule-lang-haml
-                            ndhoule-lang-java
+(defvar ndhoule/deps-lang '(
+                            ndhoule-lang-adoc
+                            ;; ndhoule-lang-clojure
+                            ;; ndhoule-lang-css
+                            ;; ndhoule-lang-csv
+                            ;; ndhoule-lang-go
+                            ;; ndhoule-lang-haml
+                            ;; ndhoule-lang-java
                             ndhoule-lang-javascript
-                            ndhoule-lang-markdown
-                            ndhoule-lang-nginx
-                            ndhoule-lang-python
-                            ndhoule-lang-ruby
-                            ndhoule-lang-sgml
-                            ndhoule-lang-sml
-                            ndhoule-lang-yaml
-                            ndhoule-lang-sh)
-  "A list of dependencies to load after all plugins have loaded.")
+                            ;; ndhoule-lang-markdown
+                            ;; ndhoule-lang-nginx
+                            ;; ndhoule-lang-python
+                            ;; ndhoule-lang-ruby
+                            ;; ndhoule-lang-sgml
+                            ;; ndhoule-lang-sh
+                            ;; ndhoule-lang-sml
+                            ;; ndhoule-lang-yaml
+                            ))
 
 (defvar ndhoule/deps-post '(ndhoule-auto-complete)
   "A list of dependencies to load after all other files have finished loading.")

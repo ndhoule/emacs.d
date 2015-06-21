@@ -6,30 +6,33 @@
 
 ;;; Code:
 
-(require-package 'ruby-mode)
-(require-package 'inf-ruby)
+(use-package inf-ruby
+             :ensure t
+             :defer t)
 
-(eval-after-load 'ruby
-  (progn
-    ; Add various Ruby filetypes to ruby-mode
-    (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("\\.thor$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("\\.pp$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("Thorfile$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
-    (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
+(use-package ruby-mode
+             :ensure t
+             :mode "Capfile\\'"
+             :mode "Gemfile\\'"
+             :mode "Guardfile\\'"
+             :mode "Rakefile\\'"
+             :mode "Thorfile\\'"
+             :mode "Vagrantfile\\'"
+             :mode "\\.gemspec\\'"
+             :mode "\\.pp\\'"
+             :mode "\\.rake\\'"
+             :mode "\\.rb\\'"
+             :mode "\\.ru\\'"
+             :mode "\\.thor\\'"
+             :interpreter "ruby"
+             :config
+             (require 'inf-ruby)
 
-    ; Ignore binary Ruby files
-    (add-to-list 'completion-ignored-extensions ".rbc")
-    (add-to-list 'completion-ignored-extensions ".rbo")
+             ;; Ignore binary Ruby files
+             (add-to-list 'completion-ignored-extensions ".rbc")
+             (add-to-list 'completion-ignored-extensions ".rbo")
 
-    (setq ruby-deep-indent-paren nil)))
-
+             (setq ruby-deep-indent-paren nil))
 
 (provide 'ndhoule-lang-ruby)
 ;;; ndhoule-lang-ruby.el ends here

@@ -1,9 +1,9 @@
 ;;; ndhoule-gui.el --- Common settings for GUI mode
-
+;;
 ;;; Commentary:
 ;;
 ;; Settings that should be applied in GUI mode across all platforms go in here.
-
+;;
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;

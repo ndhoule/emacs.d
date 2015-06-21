@@ -48,6 +48,7 @@
   "Install given PACKAGE, optionally requiring MIN-VERSION.
 If NO-REFRESH is non-nil, the available package lists will not be
 re-downloaded in order to locate PACKAGE."
+  (message "require-package has been deprecated.")
   (if (package-installed-p package min-version)
       t
     (if (or (assoc package package-archive-contents) no-refresh)
@@ -60,6 +61,7 @@ re-downloaded in order to locate PACKAGE."
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+;; FIXME: use-package
 (require-package 'fullframe)
 (fullframe list-packages quit-window)
 

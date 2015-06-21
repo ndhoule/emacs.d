@@ -1,22 +1,23 @@
 ;;; ndhoule-osx.el --- OS X-specific settings
-
+;;
 ;;; Commentary:
 ;;
 ;; Settings that are loaded only when running on an OS X platform.
-
+;;
 ;;; Code:
 
-;;;;;;;;;;;;;;;;;;;;
-;;; Dependencies ;;;
-;;;;;;;;;;;;;;;;;;;;
+(use-package dash-at-point
+             :ensure t
+             :init
+             (add-hook 'evil-after-load-hook
+                       (evil-leader/set-key "?" 'dash-at-point)))
 
-(require 'ndhoule-evil)
-(require-package 'dash-at-point)
-(require-package 'exec-path-from-shell)
-
-;;;;;;;;;;;;;;;;;
-;;; Functions ;;;
-;;;;;;;;;;;;;;;;;
+(use-package exec-path-from-shell
+             :ensure t
+             :config
+             ;; Set the current path to the shell's path.
+             ;; (Emacs doesn't do this by default on OS X.)
+             (exec-path-from-shell-initialize))
 
 (defun ndhoule/pb-copy ()
   "Copies the currently selected text to the OS clipboard."
@@ -34,25 +35,11 @@
     (point)
     (if mark-active (mark) (point)) "pbpaste" nil t))
 
-;;;;;;;;;;;;;;;;;;;;;
-;;; Configuration ;;;
-;;;;;;;;;;;;;;;;;;;;;
-
-;; Set the current path to the shell's path. (Emacs doesn't do this by default on OS X.)
-(exec-path-from-shell-initialize)
-
-;;;;;;;;;;;;;;;;;;;
-;;; Keybindings ;;;
-;;;;;;;;;;;;;;;;;;;
-
-(evil-leader/set-key
-  "?" 'dash-at-point
-  "y"  'ndhoule/pb-copy
-  "p"  'ndhoule/pb-paste)
-
-;;;;;;;;;;;;;;
-;;; Export ;;;
-;;;;;;;;;;;;;;
+(add-hook 'evil-after-load-hook
+          (lambda ()
+            (evil-leader/set-key
+              "y"  'ndhoule/pb-copy
+              "p"  'ndhoule/pb-paste)))
 
 (provide 'ndhoule-osx)
 ;;; ndhoule-osx.el ends here

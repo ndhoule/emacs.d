@@ -1,9 +1,9 @@
 ;;; ndhoule-evil.el --- All settings related to evil mode
-
+;;
 ;;; Commentary:
 ;;
-;; Sorry, Emacs--chords blow.
-
+;; Goodbye, chords.
+;;
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;
@@ -11,66 +11,80 @@
 ;;;;;;;;;;;;;;;;;;;;
 
 (require 'ndhoule-defuns)
-(require-package 'evil)
-(require-package 'evil-leader)
-(require-package 'evil-nerd-commenter)
-(require-package 'evil-paredit)
-(require-package 'evil-surround)
 
-;;;;;;;;;;;;;;;;;;;;;
-;;; Configuration ;;;
-;;;;;;;;;;;;;;;;;;;;;
+(use-package evil-leader
+             :ensure t
+             :defer t
+             :config
+             (global-evil-leader-mode))
 
-(evil-mode 1)
-(global-evil-leader-mode)
-(global-evil-surround-mode 1)
-(setq evil-default-cursor t)
+(use-package evil-nerd-commenter
+             :ensure t
+             :defer t)
 
-;;;;;;;;;;;;;;;;;;;
-;;; Keybindings ;;;
-;;;;;;;;;;;;;;;;;;;
+(use-package evil-paredit
+             :ensure t
+             :defer t)
 
-(evil-leader/set-leader ",")
+(use-package evil-surround
+             :ensure t
+             :defer t
+             :config
+             (global-evil-surround-mode 1))
 
-;; Skip wrapped lines visually, not by line number
-(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+(use-package evil
+             :ensure t
+             :config
+             (evil-mode 1)
 
-;; Shortcut for wrapping paragraphs at line limit
-(define-key evil-normal-state-map (kbd "Q") (kbd "gqap"))
+             (require 'evil-leader)
+             (require 'evil-nerd-commenter)
+             (require 'evil-paredit)
+             (require 'evil-surround)
 
-;; Use ; as :
-(define-key evil-normal-state-map (kbd ";") 'evil-ex)
-(define-key evil-visual-state-map (kbd ";") 'evil-ex)
-(define-key evil-motion-state-map (kbd ";") 'evil-ex)
+             (setq evil-default-cursor t)
 
-(evil-leader/set-key
-  "cu"      'ndhoule/clean-up-buffer-or-region
-  "s"       'sort-lines
+             ;;;;;;;;;;;;;;;;;;;
+             ;;; Keybindings ;;;
+             ;;;;;;;;;;;;;;;;;;;
 
-  ;; Folding
-  "zf"      'hs-hide-block
-  "zo"      'hs-show-block
+             (evil-leader/set-leader ",")
 
-  ;; Comments
-  "c <SPC>" 'evilnc-comment-or-uncomment-lines
+             ;; Skip wrapped lines visually, not by line number
+             (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+             (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
-  ;; Buffer management
-  "bu"      'buffer-menu
-  "bd"      'kill-buffer-and-window
+             ;; Shortcut for wrapping paragraphs at line limit
+             (define-key evil-normal-state-map (kbd "Q") (kbd "gqap"))
 
-  ;; Window/pane management
-  "vs"      'split-window-right
-  "hs"      'split-window-below
-  "bs"      'balance-windows
-  "w"       'next-multiframe-window
+             ;; Use ; as :
+             (define-key evil-normal-state-map (kbd ";") 'evil-ex)
+             (define-key evil-visual-state-map (kbd ";") 'evil-ex)
+             (define-key evil-motion-state-map (kbd ";") 'evil-ex)
 
-  ;; File management
-  "o"       'ndhoule/open-file-with)
+             (evil-leader/set-key
+               "cu"      'ndhoule/clean-up-buffer-or-region
+               "s"       'sort-lines
 
-;;;;;;;;;;;;;;
-;;; Export ;;;
-;;;;;;;;;;;;;;
+               ;; Folding
+               "zf"      'hs-hide-block
+               "zo"      'hs-show-block
+
+               ;; Comments
+               "c <SPC>" 'evilnc-comment-or-uncomment-lines
+
+               ;; Buffer management
+               "bu"      'buffer-menu
+               "bd"      'kill-buffer-and-window
+
+               ;; Window/pane management
+               "vs"      'split-window-right
+               "hs"      'split-window-below
+               "bs"      'balance-windows
+               "w"       'next-multiframe-window
+
+               ;; File management
+               "o"       'ndhoule/open-file-with))
 
 (provide 'ndhoule-evil)
 ;;; ndhoule-evil.el ends here

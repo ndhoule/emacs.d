@@ -6,56 +6,54 @@
 ;;
 ;;; Code:
 
+(use-package coffee-mode
+             :mode "\\.coffee\\'")
 
-(require-package 'coffee-mode)
-(require-package 'js2-mode)
-(require-package 'requirejs-mode)
+(use-package js2-mode
+             :mode "\\.js\\'"
+             ;; Don't use `json-mode' since it can't JSON worth a shit
+             :mode "\\.json\\'"
+             :interpreter "node"
+             :init
+             (setq ndhoule/preferred-javascript-indent-level 2)
 
-;; Ensure we use js-mode rather than the built-in (outdated) javascript-mode
-(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
-;; Don't use `json-mode' since it can't JSON worth a shit
-(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+             ;; Set sane indentation defaults
+             (setq js2-pretty-multiline-declarations t)
 
-(defvar ndhoule/preferred-javascript-indent-level 2)
+             ;; TODO: Document
+             (setq js2-highlight-external-variables nil)
+             (setq js2-highlight-level 3)
 
-(setq js-indent-level ndhoule/preferred-javascript-indent-level)
-(setq js2-indent-level ndhoule/preferred-javascript-indent-level)
-(setq js2-basic-offset ndhoule/preferred-javascript-indent-level)
+             ;; Indentation
+             (setq js2-indent-level ndhoule/preferred-javascript-indent-level)
+             (setq js2-basic-offset ndhoule/preferred-javascript-indent-level)
+             :config
+             (require 'requirejs-mode)
+             (require 'tern)
 
-;; Tern
-(add-to-list 'load-path (expand-file-name "tern/emacs" site-lisp-dir))
-(autoload 'tern-mode "tern.el" nil t)
+             ;; FIXME: Doesn't work ?_?
+             ;; Code folding support
+             ;; (hs-minor-mode 1)
 
-(eval-after-load 'auto-complete
-  '(eval-after-load 'tern
-     '(progn
-        (require 'tern-auto-complete)
-        (setq tern-ac-on-dot nil)
-        (tern-ac-setup))))
+             ;; FIXME: Doesn't work ?_?
+             ;; Fix Evil shift (<|>) indentation
+             (setq evil-shift-width ndhoule/preferred-javascript-indent-level))
 
-(defun ndhoule/js-mode-hook ()
-  "Hook for setting `js-mode' defaults and enabling `js2-minor-mode'."
+(use-package requirejs-mode
+             :ensure t
+             :defer t)
 
-  (js2-minor-mode 1)
-
-  ;; Set sane indentation defaults
-  (setq js2-pretty-multiline-declarations t)
-
-  (setq js2-highlight-external-variables nil)
-  (setq js2-highlight-level 3)
-
-  ;; Enable Tern
-  (tern-mode t)
-
-  ;; Fix Evil's < and > indentation
-  (setq evil-shift-width ndhoule/preferred-javascript-indent-level)
-
-  ;; Code folding support
-  (hs-minor-mode 1))
-
-;; Enterprise, go!
-(add-hook 'js-mode-hook (lambda () (ndhoule/js-mode-hook)))
-
+(use-package tern
+             :ensure t
+             :defer t
+             :load-path "site-lisp/tern/emacs"
+             :config
+             (tern-mode t)
+             (eval-after-load 'auto-complete
+               '(progn
+                  (require 'tern-auto-complete)
+                  (setq tern-ac-on-dot nil)
+                  (tern-ac-setup))))
 
 (provide 'ndhoule-lang-javascript)
 ;;; ndhoule-lang-javascript.el ends here

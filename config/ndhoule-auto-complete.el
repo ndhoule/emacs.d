@@ -1,80 +1,78 @@
 ;;; ndhoule-autocomplete.el --- auto-complete.el settings
-
+;;
 ;;; Commentary:
 ;;
 ;; Settings related to auto-complete.el.
-
+;;
 ;;; Code:
 
-;;;;;;;;;;;;;;;;;;;;
-;;; Dependencies ;;;
-;;;;;;;;;;;;;;;;;;;;
+(use-package fuzzy
+             :ensure t
+             :defer t)
 
-(require 'ndhoule-evil)
-(require-package 'auto-complete)
-(require-package 'fuzzy)
-(require-package 'popup)
+(use-package popup
+             :ensure t
+             :defer t)
 
-;;;;;;;;;;;;;;;;;;;;;
-;;; Configuration ;;;
-;;;;;;;;;;;;;;;;;;;;;
+(use-package auto-complete
+             :ensure t
+             :config
+             (require 'auto-complete-config)
+             (require 'fuzzy)
+             (require 'popup)
 
-(require 'auto-complete-config)
-(global-auto-complete-mode t)
+             (global-auto-complete-mode t)
 
-(ac-flyspell-workaround)
-(setq ac-auto-show-menu t)
-(setq ac-auto-start 2)
-(setq ac-candidate-menu-min 0)
-(setq ac-dwim)
-(setq ac-quick-help-delay 1)
-(setq ac-show-menu-immediately-on-auto-complete t)
+             (ac-flyspell-workaround)
+             (setq ac-auto-show-menu t)
+             (setq ac-auto-start 2)
+             (setq ac-candidate-menu-min 0)
+             (setq ac-dwim)
+             (setq ac-quick-help-delay 1)
+             (setq ac-show-menu-immediately-on-auto-complete t)
 
-(set-default 'ac-sources
-             '(ac-source-imenu
-               ac-source-dictionary
-               ac-source-words-in-buffer
-               ac-source-words-in-same-mode-buffers
-               ac-source-semantic
-               ac-source-yasnippet))
+             ;; Set the list of sources autocomplete will pull from to use as suggestions
+             (set-default 'ac-sources
+                          '(ac-source-imenu
+                            ac-source-dictionary
+                            ac-source-words-in-buffer
+                            ac-source-words-in-same-mode-buffers
+                            ac-source-semantic
+                            ac-source-yasnippet))
 
-(dolist (mode '(clojure-mode
-                css-mode
-                csv-mode
-                espresso-mode
-                haml-mode
-                haskell-mode
-                html-mode
-                js3-mode
-                less-css-mode
-                log-edit-mode
-                magit-log-edit-mode
-                markdown-mode
-                nxml-mode
-                org-mode
-                sass-mode
-                sh-mode
-                sql-mode
-                text-mode
-                textile-mode
-                yaml-mode))
-  (add-to-list 'ac-modes mode))
+             ;; TODO: Is this necessary?
+             (dolist (mode '(clojure-mode
+                             css-mode
+                             csv-mode
+                             espresso-mode
+                             haml-mode
+                             haskell-mode
+                             html-mode
+                             js3-mode
+                             less-css-mode
+                             log-edit-mode
+                             magit-log-edit-mode
+                             markdown-mode
+                             nxml-mode
+                             org-mode
+                             sass-mode
+                             sh-mode
+                             sql-mode
+                             text-mode
+                             textile-mode
+                             yaml-mode))
+               (add-to-list 'ac-modes mode))
 
-;;;;;;;;;;;;;;;;;;;
-;;; Keybindings ;;;
-;;;;;;;;;;;;;;;;;;;
-
-(define-key ac-completing-map (kbd "TAB") 'ac-next)
-(define-key ac-completing-map (kbd "C-j") 'ac-next)
-(define-key ac-completing-map (kbd "C-k") 'ac-previous)
-(define-key ac-completing-map (kbd "RET") 'ac-complete)
-(define-key ac-completing-map (kbd "C-l") 'ac-complete)
-(define-key ac-completing-map (kbd "ESC") 'evil-normal-state)
-(evil-make-intercept-map ac-completing-map)
-
-;;;;;;;;;;;;;;
-;;; Export ;;;
-;;;;;;;;;;;;;;
+             ;; Add evil-mode keybindings
+             (add-hook 'evil-after-load-hook
+                       (lambda ()
+                         (define-key ac-completing-map (kbd "TAB") 'ac-next)
+                         (define-key ac-completing-map (kbd "C-j") 'ac-next)
+                         (define-key ac-completing-map (kbd "C-k") 'ac-previous)
+                         (define-key ac-completing-map (kbd "RET") 'ac-complete)
+                         (define-key ac-completing-map (kbd "C-l") 'ac-complete)
+                         (define-key ac-completing-map (kbd "ESC") 'evil-normal-state)
+                         (evil-make-intercept-map ac-completing-map))))
 
 (provide 'ndhoule-auto-complete)
 ;;; ndhoule-auto-complete.el ends here

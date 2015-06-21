@@ -6,22 +6,11 @@
 
 ;;; Code:
 
-;;;;;;;;;;;;;;;;;;
-;; Dependencies ;;
-;;;;;;;;;;;;;;;;;;
-
-(require 'ndhoule-evil)
-(require-package 'powerline-evil)
-
-;;;;;;;;;;;;;;;;;;;
-;; Configuration ;;
-;;;;;;;;;;;;;;;;;;;
-
-(powerline-evil-vim-color-theme)
-
-;;;;;;;;;;;;
-;; Export ;;
-;;;;;;;;;;;;
+(use-package powerline-evil
+             :config
+             (add-hook 'evil-after-load-hook
+                       (lambda()
+                         (powerline-evil-vim-color-theme))))
 
 (provide 'ndhoule-powerline)
 ;;; ndhoule-powerline.el ends here

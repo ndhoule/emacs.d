@@ -1,23 +1,24 @@
 ;;; ndhoule-lang-sgml.el --- Settings for markup languages
-
+;;
 ;;; Commentary:
 ;;
 ;; Settings for HTML, Jade, and other markup languages.
-
+;;
 ;;; Code:
 
-(require-package 'jade-mode)
+(use-package html
+             :mode ("\\.as[cp]x$\\'"   . html-mode)
+             :mode ("\\.djhtml$\\'"    . html-mode)
+             :mode ("\\.erb$\\'"       . html-mode)
+             :mode ("\\.html?$\\'"     . html-mode)
+             :mode ("\\.jsp$\\'"       . html-mode)
+             :mode ("\\.mustache$\\'"  . html-mode)
+             :mode ("\\.phtml$\\'"     . html-mode)
+             :mode ("\\.tpl\\.php$\\'" . html-mode))
 
-(add-to-list 'auto-mode-alist '("\\.as[cp]x$\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml$\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.erb$\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.html?$\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
-(add-to-list 'auto-mode-alist '("\\.jsp$\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache$\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.phtml$\\'" . html-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php$\\'" . html-mode))
-
+(use-package jade-mode
+             :ensure t
+             :mode "\\.jade$")
 
 (provide 'ndhoule-lang-sgml)
 ;;; ndhoule-lang-sgml.el ends here

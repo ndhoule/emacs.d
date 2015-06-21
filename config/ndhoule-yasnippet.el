@@ -1,35 +1,26 @@
 ;;; ndhoule-yasnippet.el --- Config file for yasnippet
-
+;;
 ;;; Commentary:
 ;;
 ;; They're snippets. Enough said.
-
+;;
 ;;; Code:
 
-;;;;;;;;;;;;;;;;;;;;
-;;; Dependencies ;;;
-;;;;;;;;;;;;;;;;;;;;
+(use-package yasnippet
+             ;; FIXME: Don't really use snippets
+             :disabled t
+             :ensure t
+             :defer t
+             :init
+             ;; FIXME: This isn't quite right
+             ;; Erm...can't remember why, though
+             (setq yas-indent-line 'fixed)
 
-(require-package 'yasnippet)
-(require-package 'angular-snippets)
-
-;;;;;;;;;;;;;;;;;;;;;
-;;; Configuration ;;;
-;;;;;;;;;;;;;;;;;;;;;
-
-;; TODO: This isn't quite right
-(setq yas-indent-line 'fixed)
-
-(require 'angular-snippets)
-
-(yas-load-directory
- (expand-file-name "snippets" user-emacs-directory))
-
-(yas-global-mode t)
-
-;;;;;;;;;;;;;;
-;;; Export ;;;
-;;;;;;;;;;;;;;
+             (add-hook 'prog-mode-hook (lambda ()
+                                         (yas-global-mode t)))
+             :config
+             (yas-load-directory
+              (expand-file-name "snippets" user-emacs-directory)))
 
 (provide 'ndhoule-yasnippet)
 ;;; ndhoule-yasnippet.el ends here

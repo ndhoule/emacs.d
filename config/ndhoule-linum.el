@@ -6,42 +6,25 @@
 
 ;;; Code:
 
-;;;;;;;;;;;;;;;;;;;;
-;;; Dependencies ;;;
-;;;;;;;;;;;;;;;;;;;;
+(use-package linum-relative
+             :config
+             ;; Enable line numbering in all buffers.
+             (global-linum-mode t)
 
-;; TODO: Is this package still necessary?
-(require-package 'linum-relative)
-;; TODO: Why do we need this?
-(require 'linum-relative)
+             ;; Show the column/line number in the modeline.
+             (setq column-number-mode t)
 
-;;;;;;;;;;;;;;;;;;;;;
-;;; Configuration ;;;
-;;;;;;;;;;;;;;;;;;;;;
+             ;; Format linum column.
+             (setq linum-format " %3s  ")
+             (setq linum-relative-format " %3s  ")
+             (setq linum-relative-current-symbol "")
 
-;; Enable line numbering in all buffers.
-(global-linum-mode t)
+             ;; Enable relative line numbering.
+             (linum-relative-toggle)
 
-;; Show the column/line number in the modeline.
-(setq column-number-mode t)
-
-;; Format linum column.
-(setq linum-format " %3s  ")
-(setq linum-relative-format " %3s  ")
-(setq linum-relative-current-symbol "")
-
-;; Enable relative line numbering.
-(linum-relative-toggle)
-
-;;;;;;;;;;;;;;;;;;;
-;;; Keybindings ;;;
-;;;;;;;;;;;;;;;;;;;
-
-(evil-leader/set-key "re" 'linum-relative-toggle)
-
-;;;;;;;;;;;;;;
-;;; Export ;;;
-;;;;;;;;;;;;;;
+             (add-hook 'evil-after-load-hook
+                       (lambda ()
+                         (evil-leader/set-key "re" 'linum-relative-toggle))))
 
 (provide 'ndhoule-linum)
 ;;; ndhoule-linum.el ends here

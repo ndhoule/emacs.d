@@ -1,24 +1,20 @@
 ;;; ndhoule-themes.el --- Theme settings
-
+;;
 ;;; Commentary:
 ;;
 ;; Any settings relating to themes go in here.
-
+;;
 ;;; Code:
 
-;;;;;;;;;;;;;;;;;;;;
-;;; Dependencies ;;;
-;;;;;;;;;;;;;;;;;;;;
+(use-package base16-theme
+             :ensure t
+             :no-require t)
 
-(require-package 'base16-theme)
-(require-package 'cyberpunk-theme)
+(use-package cyberpunk-theme
+             :ensure t
+             :no-require t)
 
-;; Set default theme
 (load-theme 'base16-default t)
-
-;;;;;;;;;;;;;;
-;;; Export ;;;
-;;;;;;;;;;;;;;
 
 (provide 'ndhoule-themes)
 ;;; ndhoule-themes.el ends here
