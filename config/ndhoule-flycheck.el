@@ -9,6 +9,7 @@
 
 (use-package flycheck
              :ensure t
+             :diminish flycheck-mode
              :config
              (defun flycheck-handle-idle-change ()
                "Handle an expired idle time since the last change.
@@ -60,11 +61,10 @@ clean buffer we're an order of magnitude laxer about checking."
              ;;; Keybindings ;;;
              ;;;;;;;;;;;;;;;;;;;
 
-             (add-hook 'evil-after-load-hook
-                       (lambda ()
-                         (evil-leader/set-key
-                           "en" 'flycheck-next-error
-                           "ep" 'flycheck-previous-error))))
+             (with-eval-after-load "evil"
+               (evil-leader/set-key
+                 "en" 'flycheck-next-error
+                 "ep" 'flycheck-previous-error)))
 
 (provide 'ndhoule-flycheck)
 ;;; ndhoule-flycheck.el ends here

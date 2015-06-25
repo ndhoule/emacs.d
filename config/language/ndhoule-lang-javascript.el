@@ -11,8 +11,6 @@
 
 (use-package js2-mode
              :mode "\\.js\\'"
-             ;; Don't use `json-mode' since it can't JSON worth a shit
-             :mode "\\.json\\'"
              :interpreter "node"
              :init
              (setq ndhoule/preferred-javascript-indent-level 2)

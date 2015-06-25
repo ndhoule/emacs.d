@@ -11,6 +11,7 @@
              :disabled t
              :ensure t
              :defer t
+             :diminish yas-minor-mode
              :init
              ;; FIXME: This isn't quite right
              ;; Erm...can't remember why, though

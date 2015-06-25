@@ -11,6 +11,7 @@
 (use-package ethan-wspace
              :defer t
              :ensure t
+             :diminish ethan-wspace-mode
              :init
              ;; `ethan-wspace' automatically adds a newline to EOF; if we didn't have it, we'd want
              ;; to set `require-final-newline' to `t'
@@ -28,8 +29,9 @@
              :ensure t)
 
 ;; Use two spaces as a tab
-(setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
+(setq tab-width 2)
+(setq c-basic-offset 2)
 
 ;; Always indent on <Enter>
 (electric-indent-mode t)

@@ -1,9 +1,9 @@
 ;;; ndhoule-linum.el -- Line numbering settings
-
+;;
 ;;; Commentary:
 ;;
 ;; Settings that relate to line numbering; e.g. relative line numbers
-
+;;
 ;;; Code:
 
 (use-package linum-relative
@@ -22,9 +22,8 @@
              ;; Enable relative line numbering.
              (linum-relative-toggle)
 
-             (add-hook 'evil-after-load-hook
-                       (lambda ()
-                         (evil-leader/set-key "re" 'linum-relative-toggle))))
+             (with-eval-after-load "evil"
+               (evil-leader/set-key "re" 'linum-relative-toggle)))
 
 (provide 'ndhoule-linum)
 ;;; ndhoule-linum.el ends here

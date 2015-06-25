@@ -1,4 +1,4 @@
-;;; init-elpa.el -- Settings for package management
+;;; elpa.el -- Settings for package management
 
 ;;; Commentary:
 ;;
@@ -66,5 +66,5 @@ re-downloaded in order to locate PACKAGE."
 (fullframe list-packages quit-window)
 
 
-(provide 'init-elpa)
-;;; init-elpa.el ends here
+(provide 'elpa)
+;;; elpa.el ends here

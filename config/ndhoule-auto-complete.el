@@ -16,6 +16,7 @@
 
 (use-package auto-complete
              :ensure t
+             :diminish auto-complete-mode
              :config
              (require 'auto-complete-config)
              (require 'fuzzy)
@@ -64,15 +65,14 @@
                (add-to-list 'ac-modes mode))
 
              ;; Add evil-mode keybindings
-             (add-hook 'evil-after-load-hook
-                       (lambda ()
-                         (define-key ac-completing-map (kbd "TAB") 'ac-next)
-                         (define-key ac-completing-map (kbd "C-j") 'ac-next)
-                         (define-key ac-completing-map (kbd "C-k") 'ac-previous)
-                         (define-key ac-completing-map (kbd "RET") 'ac-complete)
-                         (define-key ac-completing-map (kbd "C-l") 'ac-complete)
-                         (define-key ac-completing-map (kbd "ESC") 'evil-normal-state)
-                         (evil-make-intercept-map ac-completing-map))))
+             (with-eval-after-load "evil"
+               (define-key ac-completing-map (kbd "TAB") 'ac-next)
+               (define-key ac-completing-map (kbd "C-j") 'ac-next)
+               (define-key ac-completing-map (kbd "C-k") 'ac-previous)
+               (define-key ac-completing-map (kbd "RET") 'ac-complete)
+               (define-key ac-completing-map (kbd "C-l") 'ac-complete)
+               (define-key ac-completing-map (kbd "ESC") 'evil-normal-state)
+               (evil-make-intercept-map ac-completing-map)))
 
 (provide 'ndhoule-auto-complete)
 ;;; ndhoule-auto-complete.el ends here

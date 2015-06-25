@@ -10,6 +10,7 @@
 (use-package smartparens
              :ensure t
              :defer t
+             :diminish smartparens-mode
              :config
              (add-hook 'prog-mode
                        (lambda ()

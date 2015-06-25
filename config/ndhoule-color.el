@@ -27,6 +27,7 @@
 ;; Highlight columns that exceed 100 characters
 (use-package column-enforce-mode
              :ensure t
+             :diminish column-enforce-mode
              :config
              (setq column-enforce-column 100)
              (add-hook 'prog-mode-hook 'column-enforce-mode))
@@ -38,6 +39,7 @@
 (use-package fixmee
              :disabled t
              :ensure t
+             :diminish fixmee-mode
              :config
              (global-fixmee-mode 1))
 

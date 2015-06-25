@@ -53,24 +53,23 @@
   "A list of dependencies to load before any language-specific configuration.")
 
 ;; TODO: Load all files in the `languages' folder automatically
-(defvar ndhoule/deps-lang '(
-                            ndhoule-lang-adoc
-                            ;; ndhoule-lang-clojure
-                            ;; ndhoule-lang-css
-                            ;; ndhoule-lang-csv
-                            ;; ndhoule-lang-go
-                            ;; ndhoule-lang-haml
-                            ;; ndhoule-lang-java
+(defvar ndhoule/deps-lang '(ndhoule-lang-adoc
+                            ndhoule-lang-clojure
+                            ndhoule-lang-css
+                            ndhoule-lang-csv
+                            ndhoule-lang-go
+                            ndhoule-lang-haml
+                            ndhoule-lang-java
                             ndhoule-lang-javascript
-                            ;; ndhoule-lang-markdown
-                            ;; ndhoule-lang-nginx
-                            ;; ndhoule-lang-python
-                            ;; ndhoule-lang-ruby
-                            ;; ndhoule-lang-sgml
-                            ;; ndhoule-lang-sh
-                            ;; ndhoule-lang-sml
-                            ;; ndhoule-lang-yaml
-                            ))
+                            ndhoule-lang-json
+                            ndhoule-lang-markdown
+                            ndhoule-lang-nginx
+                            ndhoule-lang-python
+                            ndhoule-lang-ruby
+                            ndhoule-lang-sgml
+                            ndhoule-lang-sh
+                            ndhoule-lang-sml
+                            ndhoule-lang-yaml))
 
 (defvar ndhoule/deps-post '(ndhoule-auto-complete)
   "A list of dependencies to load after all other files have finished loading.")

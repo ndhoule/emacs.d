@@ -10,9 +10,8 @@
              :ensure t
              :config
              (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-             (add-hook 'evil-after-load-hook
-                       (lambda ()
-                         (evil-leader/set-key "ra" 'rainbow-delimiters-mode))))
+             (with-eval-after-load "evil"
+               (evil-leader/set-key "ra" 'rainbow-delimiters-mode)))
 
 (provide 'ndhoule-rainbow-delimiters)
 ;;; ndhoule-rainbow-delimiters.el ends here

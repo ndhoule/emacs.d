@@ -15,13 +15,12 @@
                        (lambda()
                          (setq indent-tabs-mode t)))
              :config
-             (add-hook 'evil-after-load-hook
-                       (lambda ()
-                         (evil-leader/set-key
-                           "ks" 'godef-jump
-                           "gig" 'go-goto-imports
-                           "gia" 'go-import-add
-                           "gir" 'go-remove-unused-imports))))
+             (with-eval-after-load "evil"
+               (evil-leader/set-key
+                 "ks" 'godef-jump
+                 "gig" 'go-goto-imports
+                 "gia" 'go-import-add
+                 "gir" 'go-remove-unused-imports)))
 
 (provide 'ndhoule-lang-go)
 ;;; ndhoule-lang-go.el ends here
