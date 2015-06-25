@@ -1,4 +1,4 @@
-;;; init.el --- Entry point for all things Emacs
+;;; init.el --- Entry point for emacs.d.
 ;;
 ;;; Commentary:
 ;;
@@ -7,26 +7,24 @@
 ;;; Code:
 
 ;;;
-;;; Loadpath
+;;; Loadpaths
 ;;;
-
-; Set the site-lisp directory as a variable to be used in other config files
-(setq site-lisp-dir
-      (expand-file-name "site-lisp" user-emacs-directory))
-
-(setq core-config-dir
-      (expand-file-name "core" user-emacs-directory))
-
-(setq user-config-dir
-      (expand-file-name "config" user-emacs-directory))
 
 (defun add-to-loadpath (&rest paths)
   "Add a series of paths to the loadpath."
   (mapc (apply-partially 'add-to-list 'load-path) paths))
 
-;; Add common paths to loadpath
-(add-to-loadpath site-lisp-dir
-                 core-config-dir
+(setq core-config-dir
+      (expand-file-name "core" user-emacs-directory))
+
+(setq site-lisp-dir
+      (expand-file-name "site-lisp" user-emacs-directory))
+
+(setq user-config-dir
+      (expand-file-name "config" user-emacs-directory))
+
+(add-to-loadpath core-config-dir
+                 site-lisp-dir
                  user-config-dir)
 
 ;; Recursively add the contents of `user-config-dir` to the loadpath. This
@@ -34,18 +32,16 @@
 (let ((default-directory user-config-dir))
   (normal-top-level-add-subdirs-to-load-path))
 
-(require 'init-elpa)
+(require 'elpa)
 
-;; XXX: these are core packages that must be loaded before any others
-(setq package-list '(use-package))
+(setq core-package-list '(diminish use-package))
 
-(dolist (package package-list)
+(dolist (package core-package-list)
   (unless (package-installed-p package)
     (package-install package)))
-;; END XXX
 
+(require 'benchmark)
 (require 'use-package)
-
 (require 'ndhoule-init)
 
 ;;; init.el ends here
