@@ -7,8 +7,8 @@
 ;;; Code:
 
 (use-package sml-mode
-             :ensure t
-             :mode "\\.sml\\'")
+  :ensure t
+  :mode "\\.sml\\'")
 
 (provide 'ndhoule-lang-sml)
 ;;; ndhoule-lang-sml.el ends here

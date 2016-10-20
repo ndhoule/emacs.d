@@ -30,6 +30,5 @@
                     " "
                     buffer-file-name))))
 
-
 (provide 'ndhoule-defuns)
 ;;; ndhoule-defuns.el ends here

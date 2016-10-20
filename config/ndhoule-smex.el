@@ -11,15 +11,15 @@
 ;;; Code:
 
 (use-package smex
-             :ensure t
-             :init
-             (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
-             :config
-             (smex-initialize)
+  :ensure t
+  :init
+  (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
+  :config
+  (smex-initialize)
 
-             ;; Replace M-x with Smex
-             (global-set-key (kbd "M-x") 'smex)
-             (global-set-key (kbd "M-X") 'smex-major-mode-commands))
+  ;; Replace M-x with Smex
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands))
 
 (provide 'ndhoule-smex)
 ;;; ndhoule-smex.el ends here

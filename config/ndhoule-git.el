@@ -26,23 +26,18 @@
 ;;   password = your-personal-access-token
 ;;   oauth-token = your-personal-access-token
 ;; ```
-(use-package gist
-             :ensure t)
 
 (use-package github-browse-file
-             :ensure t)
+  :ensure t)
 
-(use-package git-commit-mode
-             :ensure t)
+;; (use-package git-commit-mode
+;;   :ensure t)
 
 (use-package gitconfig-mode
-            :mode "^\\\.?(gitconfig.global|gitconfig)\\'"
-             :ensure t)
+  :ensure t)
 
 (use-package gitignore-mode
-            :mode "^\\.?gitignore\\'"
-            :ensure t)
-
+  :ensure t)
 
 (provide 'ndhoule-git)
 ;;; ndhoule-git.el ends here

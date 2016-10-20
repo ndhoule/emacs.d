@@ -6,19 +6,21 @@
 ;;
 ;;; Code:
 
+(defvar ndhoule/jdee-path
+  (expand-file-name "jdee/dist/jdee-2.4.2/lisp" site-lisp-dir))
+
 (use-package jde-mode
-             ;; FIXME: Make this relative to `site-lisp-dir'
-             :load-path "site-lisp/jdee/dist/jdee-2.4.2/lisp"
-             :mode "\\.java\\'"
-             :config
-             ;; Autocompile Java on save
-             (add-hook 'before-save-hook
-                       (lambda ()
-                         (jde-import-kill-extra-imports)
-                         (jde-import-all)
-                         (jde-import-organize))
-                       nil t)
-             (add-hook 'after-save-hook 'jde-compile nil t))
+  :load-path ndhoule/jdee-path
+  :mode "\\.java\\'"
+  :config
+  ;; Autocompile Java on save
+  (add-hook 'before-save-hook
+            (lambda ()
+              (jde-import-kill-extra-imports)
+              (jde-import-all)
+              (jde-import-organize))
+            nil t)
+  (add-hook 'after-save-hook 'jde-compile nil t))
 
 (provide 'ndhoule-lang-java)
 ;;; ndhoule-lang-java.el ends here

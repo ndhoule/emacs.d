@@ -11,7 +11,7 @@
 ;;; Line Coloration
 ;;;
 
-;; Highlight the currently selected line
+;; Highlight the current line
 (global-hl-line-mode 1)
 
 ;; Set line highlight color
@@ -20,28 +20,19 @@
 ;; Make area select color nicer
 (set-face-background 'region "#595959")
 
-;;;
-;;; Line Length
-;;;
-
-;; Highlight columns that exceed 100 characters
+;; Highlight lines longer than x characters
 (use-package column-enforce-mode
-             :ensure t
-             :diminish column-enforce-mode
-             :config
-             (setq column-enforce-column 100)
-             (add-hook 'prog-mode-hook 'column-enforce-mode))
+  :ensure t
+  :diminish column-enforce-mode
+  :config
+  (setq column-enforce-column 80)
+  (add-hook 'prog-mode-hook 'column-enforce-mode))
 
-;;;
-;;; TODO/FIXME/XXX Highlighting
-;;;
-
-(use-package fixmee
-             :disabled t
-             :ensure t
-             :diminish fixmee-mode
-             :config
-             (global-fixmee-mode 1))
+;; Colorize color values in HTML, CSS, etc. modes
+(use-package rainbow-mode
+  :ensure t
+  :config
+  (rainbow-mode))
 
 (provide 'ndhoule-color)
 ;;; ndhoule-color.el ends here

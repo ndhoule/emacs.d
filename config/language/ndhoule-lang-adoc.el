@@ -7,10 +7,10 @@
 ;;; Code:
 
 (use-package adoc-mode
-             :ensure t
-             :mode "\\.txt\\'"
-             :mode "\\.adoc\\'"
-             :mode "\\.asciidoc\\'")
+  :ensure t
+  :mode "\\.txt\\'"
+  :mode "\\.adoc\\'"
+  :mode "\\.asciidoc\\'")
 
 (provide 'ndhoule-lang-adoc)
 ;;; ndhoule-lang-adoc.el ends here

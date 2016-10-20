@@ -7,10 +7,9 @@
 ;;; Code:
 
 (use-package yaml-mode
-             :ensure t
-             :mode "\\.sls\\'"
-             :mode "\\.yaml\\'"
-             :mode "\\.yml\\'")
+  :ensure t
+  :mode "\\.sls\\'"
+  :mode "\\.ya?ml\\'")
 
 (provide 'ndhoule-lang-yaml)
 ;;; ndhoule-lang-yaml.el ends here

@@ -14,22 +14,19 @@
 ;; Use Better Defaults as a basis for configuration
 ;; https://github.com/technomancy/better-defaults
 (use-package better-defaults
-             :ensure t)
+  :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;; Configuration ;;;
 ;;;;;;;;;;;;;;;;;;;;;
 
-(defvar ndhoule/deps-lib '(ndhoule-macros
-                           ndhoule-defuns)
+(defvar ndhoule/deps-lib '(ndhoule-defuns)
   "A list of dependencies to load before any other dependencies begin loading.")
 
-(defvar ndhoule/deps-pre '(ndhoule-diminish
-                           ndhoule-themes)
+(defvar ndhoule/deps-pre '(ndhoule-themes)
   "A list of dependencies to load before other dependencies load, but after all library files have loaded.")
 
-(defvar ndhoule/deps-main '(ndhoule-ace
-                            ndhoule-color
+(defvar ndhoule/deps-main '(ndhoule-color
                             ndhoule-editorconfig
                             ndhoule-emmet
                             ndhoule-evil
@@ -48,11 +45,9 @@
                             ndhoule-smex
                             ndhoule-spell
                             ndhoule-whitespace
-                            ndhoule-window
-                            ndhoule-yasnippet)
+                            ndhoule-window)
   "A list of dependencies to load before any language-specific configuration.")
 
-;; TODO: Load all files in the `languages' folder automatically
 (defvar ndhoule/deps-lang '(ndhoule-lang-adoc
                             ndhoule-lang-clojure
                             ndhoule-lang-css
@@ -64,14 +59,16 @@
                             ndhoule-lang-json
                             ndhoule-lang-markdown
                             ndhoule-lang-nginx
+                            ndhoule-lang-php
                             ndhoule-lang-python
                             ndhoule-lang-ruby
                             ndhoule-lang-sgml
                             ndhoule-lang-sh
                             ndhoule-lang-sml
+                            ndhoule-lang-terraform
                             ndhoule-lang-yaml))
 
-(defvar ndhoule/deps-post '(ndhoule-auto-complete)
+(defvar ndhoule/deps-post '(ndhoule-completion)
   "A list of dependencies to load after all other files have finished loading.")
 
 ;;;;;;;;;;;;;;;;;;;;;

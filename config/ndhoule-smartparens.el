@@ -7,16 +7,18 @@
 ;;
 ;;; Code:
 
+;; FIXME: Enable in more modes
+;; FIXME: close quotes
 (use-package smartparens
-             :ensure t
-             :defer t
-             :diminish smartparens-mode
-             :config
-             (add-hook 'prog-mode
-                       (lambda ()
-                         (require 'smartparens-config)
-                         (smartparens-global-mode t)
-                         (show-smartparens-global-mode t))))
+  :ensure t
+  :defer t
+  :diminish smartparens-mode
+  :config
+  (add-hook 'prog-mode
+            (lambda ()
+              (require 'smartparens-config)
+              (smartparens-global-mode t)
+              (show-smartparens-global-mode t))))
 
 (provide 'ndhoule-smartparens)
 ;;; ndhoule-smartparens.el ends here

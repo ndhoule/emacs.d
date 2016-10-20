@@ -8,7 +8,8 @@
 
 ;; TODO: Modes
 (use-package nginx-mode
-             :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'ndhoule-lang-nginx)
 ;;; ndhoule-lang-nginx.el ends here

@@ -7,10 +7,10 @@
 ;;; Code:
 
 (use-package python
-             :mode ("\\.py\\'" . python-mode)
-             :interpreter ("python" . python-mode)
-             :config
-             (add-to-list 'completion-ignored-extensions ".pyc"))
+  :mode ("\\.py\\'" . python-mode)
+  :interpreter ("python" . python-mode)
+  :init
+  (add-to-list 'completion-ignored-extensions ".pyc"))
 
 (provide 'ndhoule-lang-python)
 ;;; ndhoule-lang-python.el ends here

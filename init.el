@@ -2,13 +2,9 @@
 ;;
 ;;; Commentary:
 ;;
-;; This file gets executed first.
+;; This file kicks everything off.
 ;;
 ;;; Code:
-
-;;;
-;;; Loadpaths
-;;;
 
 (defun add-to-loadpath (&rest paths)
   "Add a series of paths to the loadpath."
@@ -34,7 +30,8 @@
 
 (require 'elpa)
 
-(setq core-package-list '(diminish use-package))
+(setq core-package-list
+      '(benchmark-init diminish use-package))
 
 (dolist (package core-package-list)
   (unless (package-installed-p package)

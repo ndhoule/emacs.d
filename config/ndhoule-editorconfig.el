@@ -6,7 +6,9 @@
 ;;
 ;;; Code:
 
-(use-package editorconfig)
+; https://github.com/editorconfig/editorconfig-emacs
+(use-package editorconfig
+  :ensure t)
 
 (provide 'ndhoule-editorconfig)
 ;;; ndhoule-editorconfig.el ends here

@@ -7,8 +7,8 @@
 ;;; Code:
 
 (use-package csv-mode
-             :ensure t
-             :mode "\\.csv\\'")
+  :ensure t
+  :mode "\\.csv\\'")
 
 (provide 'ndhoule-lang-csv)
 ;;; ndhoule-lang-csv.el ends here

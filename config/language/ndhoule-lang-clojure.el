@@ -6,24 +6,17 @@
 ;;
 ;;; Code:
 
-
-(use-package ac-cider
-             :defer t
-             :ensure t)
-
 (use-package cider
-             :defer t
-             :ensure t
-             :config
-             (eval-after-load 'auto-complete '(require 'ac-cider)))
+  :ensure t
+  :defer t)
 
 (use-package clojure-mode
-             :ensure t
-             :mode "\\.clj\\'"
-             :init
-             (add-hook 'clojure-mode-hook 'evil-paredit-mode)
-             :config
-             (require 'cider))
+  :ensure t
+  :mode "\\.clj\\'"
+  :init
+  (add-hook 'clojure-mode-hook #'evil-paredit-mode)
+  :config
+  (require 'cider))
 
 (provide 'ndhoule-lang-clojure)
 ;;; ndhoule-lang-clojure.el ends here

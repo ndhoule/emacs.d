@@ -7,13 +7,9 @@
 ;;; Code:
 
 (use-package markdown-mode
-             :ensure t
-             :mode "\\.md\\'"
-             :mode "\\.markdown\\'"
-             :config
-             ;; Highlight fenced code blocks using that language's highlighter
-             ;; TODO: If `markdown2' doesn't exist, use `markdown'
-             (setq markdown-command "markdown2 -x fenced-code-blocks"))
+  :ensure t
+  :mode "\\.md\\'"
+  :mode "\\.markdown\\'")
 
 (provide 'ndhoule-lang-markdown)
 ;;; ndhoule-lang-markdown.el ends here
