@@ -116,12 +116,7 @@
 
   ;; FIXME: Doesn't work ?_?
   ;; Fix Evil shift (<|>) indentation
-  (setq evil-shift-width ndhoule/preferred-javascript-indent-level)
-
-  (add-hook 'js2-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends)
-                   '((company-dabbrev-mode company-yasnippet company-files company))))))
+  (setq evil-shift-width ndhoule/preferred-javascript-indent-level))
 
 (provide 'ndhoule-lang-javascript)
 ;;; ndhoule-lang-javascript.el ends here
