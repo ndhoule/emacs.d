@@ -11,7 +11,6 @@
   :init
   ; Emacs mode is a whitelisted ycmd mode but is not recognized by ycmd
   (setq ycmd-global-modes '(not emacs-lisp-mode))
-  :config
   ; TODO: Don't point at vim config, point at global installation location
   ; instead. Also, definitely expand this path using $HOME
   (set-variable 'ycmd-server-command
@@ -19,8 +18,15 @@
   (add-hook 'after-init-hook #'global-ycmd-mode))
 
 (use-package company-ycmd
-  :defer t
-  :commands company-ycmd)
+  :ensure t
+  :commands company-ycmd
+  :config
+  (with-eval-after-load  "company" (company-ycmd-setup)))
+
+(use-package flycheck-ycmd
+  :ensure t
+  :config
+  (with-eval-after-load  "flycheck" (flycheck-ycmd-setup)))
 
 (use-package company
   :ensure t
@@ -42,7 +48,7 @@
   (setq company-idle-delay 0.05)
 
   ;; Complete immediately after `.'
-  (setq company-minimum-prefix-length 2)
+  (setq company-minimum-prefix-length 0)
 
   ;; Disable blinking
   (setq company-echo-delay 0)
