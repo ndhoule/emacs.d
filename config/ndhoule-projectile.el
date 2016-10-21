@@ -15,6 +15,7 @@
   (add-to-list 'projectile-globally-ignored-directories "Godeps")
   (add-to-list 'projectile-globally-ignored-directories "components")
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
+  (add-to-list 'projectile-globally-ignored-directories "site-lisp")
   (add-to-list 'projectile-globally-ignored-directories "vendor")
   (with-eval-after-load "evil"
     (evil-leader/set-key "t" 'projectile-find-file)))
