@@ -34,5 +34,12 @@
   :config
   (rainbow-mode))
 
+(use-package hl-todo
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'prog-mode-hook 'hl-todo-mode)
+  (add-hook 'text-mode-hook 'hl-todo-mode))
+
 (provide 'ndhoule-color)
 ;;; ndhoule-color.el ends here
