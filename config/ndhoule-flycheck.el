@@ -89,8 +89,7 @@ clean buffer we're an order of magnitude laxer about checking."
           "staticcheck"
           "structcheck"
           "unconvert"
-          "varcheck"))
-  )
+          "varcheck")))
 
 (provide 'ndhoule-flycheck)
 ;;; ndhoule-flycheck.el ends here
