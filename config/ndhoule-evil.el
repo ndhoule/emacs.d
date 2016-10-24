@@ -19,28 +19,33 @@
   :config
   (global-evil-leader-mode))
 
-;; https://github.com/redguardtoo/evil-nerd-commenter
-(use-package evil-nerd-commenter
+;; https://github.com/linktohack/evil-commentary
+(use-package evil-commentary
   :ensure t
-  :defer t)
+  :defer t
+  :config
+  (evil-commentary-mode))
 
+;; https://github.com/roman/evil-paredit
 (use-package evil-paredit
   :ensure t
   :defer t)
 
+;; https://github.com/timcharper/evil-surround
 (use-package evil-surround
   :ensure t
   :defer t
   :config
   (global-evil-surround-mode 1))
 
+;; https://github.com/emacsmirror/evil
 (use-package evil
   :ensure t
   :config
   (evil-mode 1)
 
+  (require 'evil-commentary)
   (require 'evil-leader)
-  (require 'evil-nerd-commenter)
   (require 'evil-paredit)
   (require 'evil-surround)
 
