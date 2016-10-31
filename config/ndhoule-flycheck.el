@@ -47,7 +47,7 @@ clean buffer we're an order of magnitude laxer about checking."
   (setq-default flycheck-temp-prefix ".")
 
   ;; TODO: Good enough for now but should make this look nicer
-  (setq flycheck-highlighting-mode 'symbols)
+  (setq flycheck-highlighting-mode 'lines)
   (set-face-attribute 'flycheck-error nil :foreground "pink")
 
   ;; Each buffer gets its own idle-change-delay because of the
