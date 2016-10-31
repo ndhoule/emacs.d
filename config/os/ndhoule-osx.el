@@ -8,6 +8,7 @@
 
 (use-package exec-path-from-shell
   :ensure t
+  :if (member window-system '(mac ns))
   :config
   (exec-path-from-shell-copy-env "GOPATH")
   (exec-path-from-shell-initialize))
