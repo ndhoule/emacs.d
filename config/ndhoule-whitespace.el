@@ -14,10 +14,9 @@
 ;; Always indent on <Enter>
 (electric-indent-mode t)
 
-;; TODO: Replace `ethan-wspace' with a better package (it's pretty finicky)
 (use-package ethan-wspace
-  :defer t
   :ensure t
+  :defer t
   :diminish ethan-wspace-mode
   :init
   ;; `ethan-wspace' automatically adds a newline to EOF; if we didn't have it, we'd want
@@ -37,17 +36,14 @@
             (lambda ()
               (setq ethan-wspace-errors (remove 'tabs ethan-wspace-errors)))))
 
-(use-package unicode-whitespace
-  :ensure t
-  :init
+(use-package whitespace
   :config
-  (unicode-whitespace-setup 'subdued-faces)
+  (setq whitespace-display-mappings
+        '((tab-mark 9 [8594 9] [92 9]) ; 9 <Tab>, 9655 →
+          ))
 
-  ;; Highlight trailing and unwanted whitespace
-  (setq whitespace-style '(face
-                           tabs
+  (setq whitespace-style '(tabs
                            tab-mark))
-
   (global-whitespace-mode))
 
 (provide 'ndhoule-whitespace)
