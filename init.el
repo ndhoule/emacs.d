@@ -48,4 +48,7 @@
 (require 'use-package)
 (require 'ndhoule-init)
 
+(require 'server)
+(unless (server-running-p) (server-start))
+
 ;;; init.el ends here
