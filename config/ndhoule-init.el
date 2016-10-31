@@ -81,14 +81,14 @@
 (mapc #'require ndhoule/deps-lang)
 (mapc #'require ndhoule/deps-post)
 
-(if window-system
-    (require 'ndhoule-gui))
+(use-package ndhoule-gui
+  :if window-system)
 
-(if (eq system-type 'darwin)
-    (require 'ndhoule-osx))
+(use-package ndhoule-osx
+  :if (eq system-type 'darwin))
 
-(if (eq system-type 'gnu/linux)
-    (require 'ndhoule-linux))
+(use-package ndhoule-linux
+  :if (eq system-type 'gnu/linux))
 
 ;;;;;;;;;;;;;;
 ;;; Export ;;;
