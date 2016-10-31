@@ -8,14 +8,6 @@
 ;;
 ;;; Code:
 
-;; TODO: Do I actually need this now that I'm using ycmd?
-;(use-package company-go
-;  :ensure t
-;  :init
-;  (with-eval-after-load "company"
-;    (add-to-list 'company-backends 'company-go)))
-
-;; TODO: What's this for? :P
 (use-package go-eldoc
   :ensure t
   :init
