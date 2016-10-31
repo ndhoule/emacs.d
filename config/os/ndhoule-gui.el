@@ -14,6 +14,10 @@
 (global-set-key (kbd "s-+") 'text-scale-increase)
 (global-set-key (kbd "s-_") 'text-scale-decrease)
 
+;; Set frame to fullscreen (Ctrl-Cmd-F)
+;; TODO: Only set this on Mac+GUI
+(global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen)
+
 ;;;;;;;;;;;;;;
 ;;; Export ;;;
 ;;;;;;;;;;;;;;
