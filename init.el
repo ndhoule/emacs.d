@@ -30,12 +30,19 @@
 
 (require 'elpa)
 
-(setq core-package-list
-      '(benchmark-init diminish use-package))
+(setq core-package-list '(benchmark-init diminish use-package))
+
+(setq ndhoule/did-refresh-packages nil)
+
+(defun ndhoule/package-ensure-installed (package)
+  (unless (package-installed-p package)
+    (unless ndhoule/did-refresh-packages
+      (package-refresh-contents)
+      (setq ndhoule/did-refresh-packages t))
+    (package-install package)))
 
 (dolist (package core-package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+  (ndhoule/package-ensure-installed package))
 
 (require 'benchmark)
 (require 'use-package)
