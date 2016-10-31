@@ -8,6 +8,7 @@
 
 (use-package ycmd
   :ensure t
+  :pin melpa
   :init
   ; Emacs mode is a whitelisted ycmd mode but is not recognized by ycmd
   (setq ycmd-global-modes '(not emacs-lisp-mode))
@@ -20,11 +21,13 @@
 (use-package company-ycmd
   :ensure t
   :commands company-ycmd
+  :pin melpa
   :config
   (with-eval-after-load  "company" (company-ycmd-setup)))
 
 (use-package flycheck-ycmd
   :ensure t
+  :pin melpa
   :config
   (with-eval-after-load  "flycheck" (flycheck-ycmd-setup)))
 

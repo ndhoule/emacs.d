@@ -8,6 +8,7 @@
 
 (use-package linum-relative
   :ensure t
+  :pin melpa
   :defer t
   :init
   (setq linum-format "%4s ")
