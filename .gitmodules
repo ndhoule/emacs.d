@@ -1,4 +1,0 @@
-[submodule "site-lisp/jdee"]
-	path = site-lisp/jdee
-	url = https://github.com/emacsmirror/jdee.git
-	ignore = dirty

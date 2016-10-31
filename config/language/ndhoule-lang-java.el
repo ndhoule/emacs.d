@@ -6,11 +6,7 @@
 ;;
 ;;; Code:
 
-(defvar ndhoule/jdee-path
-  (expand-file-name "jdee/dist/jdee-2.4.2/lisp" site-lisp-dir))
-
-(use-package jde-mode
-  :load-path ndhoule/jdee-path
+(use-package jdee
   :mode "\\.java\\'"
   :config
   ;; Autocompile Java on save

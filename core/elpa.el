@@ -24,11 +24,16 @@
 (require 'package)
 (package-initialize)
 
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(setq package-archive-priorities
+      '(("gnu" . 10)
+        ("melpa" . 0)
+        ("melpa-stable" . 20)
+        ("org" . 20)))
+
+(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 (provide 'elpa)
 ;;; elpa.el ends here
