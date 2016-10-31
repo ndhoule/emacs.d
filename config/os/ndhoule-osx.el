@@ -8,9 +8,13 @@
 
 (use-package exec-path-from-shell
   :ensure t
-  :if (member window-system '(mac ns))
+  :init
+  (setq exec-path-from-shell-variables
+        '("PATH"
+          "MANPATH"
+          "GOPATH"
+          "GOROOT"))
   :config
-  (exec-path-from-shell-copy-env "GOPATH")
   (exec-path-from-shell-initialize))
 
 (use-package dash-at-point
