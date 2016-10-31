@@ -22,6 +22,7 @@
     (setq load-path (remove package-el-site-lisp-dir load-path))))
 
 (require 'package)
+(package-initialize)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (when (< emacs-major-version 24)
