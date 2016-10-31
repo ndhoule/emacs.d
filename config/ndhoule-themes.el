@@ -10,7 +10,7 @@
   :ensure t
   :no-require t
   :init
-  (load-theme 'base16-default-dark t))
+  (load-theme 'base16-eighties t))
 
 (provide 'ndhoule-themes)
 ;;; ndhoule-themes.el ends here
