@@ -39,5 +39,13 @@
 (use-package gitignore-mode
   :ensure t)
 
+;; TODO: Deferreds/autoloads
+(use-package magit
+  :ensure t)
+
+;; TODO: Deferreds/autoloads
+(use-package evil-magit
+  :ensure t)
+
 (provide 'ndhoule-git)
 ;;; ndhoule-git.el ends here
