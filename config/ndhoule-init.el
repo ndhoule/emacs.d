@@ -81,8 +81,9 @@
 (mapc #'require ndhoule/deps-lang)
 (mapc #'require ndhoule/deps-post)
 
-(use-package ndhoule-gui
-  :if window-system)
+;; This must be loaded in non-GUI modes; we want these keybindings to take
+;; effect even when Emacs is running in server mode
+(use-package ndhoule-gui)
 
 (use-package ndhoule-osx
   :if (eq system-type 'darwin))
