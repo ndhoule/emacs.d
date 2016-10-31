@@ -9,9 +9,10 @@
 
 (use-package flycheck-gometalinter
   :ensure t
+  :defer t
   :init
-  :config
-  (with-eval-after-load "flycheck" (flycheck-gometalinter-setup)))
+  (with-eval-after-load "flycheck"
+    (add-hook 'go-mode-hook 'flycheck-gometalinter-setup)))
 
 (use-package flycheck
   :ensure t
