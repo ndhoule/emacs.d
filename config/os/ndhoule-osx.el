@@ -6,18 +6,16 @@
 ;;
 ;;; Code:
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
+
 (use-package dash-at-point
   :ensure t
   :init
   (with-eval-after-load "evil"
     (evil-leader/set-key "?" 'dash-at-point)))
-
-;; (use-package exec-path-from-shell
-;;   :ensure t
-;;   :config
-;;   ;; Set the current path to the shell's path.
-;;   ;; (Emacs doesn't do this by default on OS X.)
-;;   (exec-path-from-shell-initialize))
 
 (defun ndhoule/pb-copy ()
   "Copies the currently selected text to the OS clipboard."
