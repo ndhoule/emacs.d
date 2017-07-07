@@ -8,31 +8,37 @@
 ;;
 ;;; Code:
 
-(use-package go-eldoc
-  :ensure t
-  :defer t
-  :init
-  (add-hook 'go-mode-hook 'go-eldoc-setup))
-
 (use-package go-mode
   :ensure t
   :mode "\\.go\\'"
+  :commands (godoc gofmt gofmt-before-save)
   :init
   (setq-default gofmt-command "goimports")
+  (add-hook 'before-save-hook #'gofmt-before-save)
+  (add-hook 'go-mode-hook
+            (with-eval-after-load 'evil
+              (evil-define-key 'normal go-mode-map (kbd "K") 'ycmd-show-documentation)
+              (evil-leader/set-key-for-mode 'go-mode "mgd" 'ycmd-goto-definition)
+              (evil-leader/set-key-for-mode 'go-mode "mia" 'go-import-add)
+              (evil-leader/set-key-for-mode 'go-mode "mig" 'go-goto-imports)
+              (evil-leader/set-key-for-mode 'go-mode "mir" 'go-remove-unused-imports)
+              (evil-leader/set-key-for-mode 'go-mode "mr" 'go-rename))))
 
-  (defun ndhoule/go-mode-hook()
-    (add-hook 'before-save-hook 'gofmt-before-save)
+(use-package go-eldoc
+  :ensure t
+  :commands go-eldoc-setup
+  :init
+  (add-hook 'go-mode-hook #'go-eldoc-setup))
 
-    (with-eval-after-load "evil"
-      (define-key evil-normal-state-local-map (kbd "K") 'godoc-at-point)
-      (evil-leader/set-key
-        "mgs" 'godef-jump-other-window
-        "mgd" 'godoc-at-point
-        "mig" 'go-goto-imports
-        "mia" 'go-import-add
-        "mir" 'go-remove-unused-imports)))
+(use-package go-rename
+  :ensure t
+  :commands go-rename)
 
-  (add-hook 'go-mode-hook 'ndhoule/go-mode-hook))
+(use-package go-guru
+  :ensure t
+  :commands go-guru-hl-identifier-mode
+  :init
+  (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode))
 
 (provide 'ndhoule-lang-go)
 ;;; ndhoule-lang-go.el ends here
