@@ -13,8 +13,10 @@
   :init
   (setq linum-format "%4s ")
   (setq linum-relative-format "%4s ")
-  (add-hook 'prog-mode-hook 'linum-relative-mode)
-  (add-hook 'text-mode-hook 'linum-relative-mode))
+  ;; TODO(ndhoule): This was linum-relative-mode, but it significantly slows
+  ;; buffer rendering. Would be great to fix it
+  (add-hook 'prog-mode-hook 'linum-mode)
+  (add-hook 'text-mode-hook 'linum-mode))
 
 (provide 'ndhoule-linum)
 ;;; ndhoule-linum.el ends here
