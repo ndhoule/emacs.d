@@ -12,6 +12,13 @@
 
 (require 'ndhoule-defuns)
 
+;; https://github.com/alexmurray/evil-vimish-fold
+(use-package evil-vimish-fold
+  :ensure t
+  :defer t
+  :config
+  (evil-vimish-fold-mode 1))
+
 ;; https://github.com/cofi/evil-leader
 (use-package evil-leader
   :ensure t
@@ -48,6 +55,7 @@
   (require 'evil-leader)
   (require 'evil-paredit)
   (require 'evil-surround)
+  (require 'evil-vimish-fold)
 
   (setq evil-default-cursor t)
 
