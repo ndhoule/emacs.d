@@ -42,7 +42,7 @@ up before you execute another command."
 This lets us fix any errors as quickly as possible, but in a
 clean buffer we're an order of magnitude laxer about checking."
     (setq flycheck-idle-change-delay
-          (if flycheck-current-errors 0.5 5.0)))
+          (if flycheck-current-errors 1.0 5.0)))
 
   (setq-default flycheck-temp-prefix ".")
 
