@@ -7,13 +7,6 @@
 ;;
 ;;; Code:
 
-(use-package flycheck-gometalinter
-  :ensure t
-  :defer t
-  :init
-  (with-eval-after-load "flycheck"
-    (add-hook 'go-mode-hook 'flycheck-gometalinter-setup)))
-
 (use-package flycheck
   :ensure t
   :defer t
@@ -75,22 +68,25 @@ clean buffer we're an order of magnitude laxer about checking."
   (with-eval-after-load "evil"
     (evil-leader/set-key
       "en" 'flycheck-next-error
-      "ep" 'flycheck-previous-error))
+      "ep" 'flycheck-previous-error)))
 
-  (setq flycheck-gometalinter-concurrency "2")
-  (setq flycheck-gometalinter-sort "line")
-  (setq flycheck-gometalinter-disable-all t)
-  (setq flycheck-gometalinter-enable-linters
-        '("deadcode"
-          "golint"
-          "gosimple"
-          "gotype"
-          "govet"
-          "ineffassign"
-          "staticcheck"
-          "structcheck"
-          "unconvert"
-          "varcheck")))
+(use-package flycheck-gometalinter
+  :ensure t
+  :defer t
+  :init
+  (with-eval-after-load 'flycheck
+    (setq flycheck-gometalinter-concurrency "2")
+    (setq flycheck-gometalinter-sort "line")
+    (setq flycheck-gometalinter-disable-all t)
+    (setq flycheck-gometalinter-enable-linters
+          '("golint"
+            "gosimple"
+            "gotype"
+            "vet"
+            "ineffassign"
+            "staticcheck"
+            "unconvert"))
+    (add-hook 'go-mode-hook 'flycheck-gometalinter-setup)))
 
 (provide 'ndhoule-flycheck)
 ;;; ndhoule-flycheck.el ends here
