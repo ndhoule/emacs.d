@@ -12,7 +12,8 @@
   ;; Disable scroll bars
   (scroll-bar-mode -1)
   ;; Prevent scrolling from jumping half-pages at a time
-  (setq smooth-scroll-margin 5))
+  (setq smooth-scroll-margin 5)
+  (smooth-scrolling-mode 1))
 
 (provide 'ndhoule-scrolling)
 ;;; ndhoule-scrolling.el ends here
