@@ -23,25 +23,26 @@
   "Find the closest local eslint executable."
   (ndhoule/find-file-in-heirarchy (buffer-file-name) "node_modules/.bin/eslint"))
 
-;; (use-package company-tern
-;; :ensure t
-;; :defer t
-;; :init
-;; (add-hook 'js2-mode-hook
-;;             (lambda ()
-;;             (add-to-list 'company-backends 'company-tern))))
+(use-package company-tern
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'js2-mode-hook
+            (lambda ()
+              (add-to-list 'company-backends 'company-tern))))
 
-;;(use-package tern
-;;:ensure t
-;;:load-path "site-lisp/tern/emacs"
-;;:diminish tern-mode
-;;:init
-;;(add-hook 'js2-mode-hook 'tern-mode)
-;;(with-eval-after-load "evil"
-;;    (evil-leader/set-key-for-mode 'js2-mode "mgd" 'tern-get-docs)
-;;    (evil-leader/set-key-for-mode 'js2-mode "mgg" 'tern-find-definition))
-;;:config
-;;(tern-mode t))
+(use-package tern
+  :ensure t
+  :load-path "site-lisp/tern/emacs"
+  :diminish tern-mode
+  :init
+  (add-hook 'js2-mode-hook 'tern-mode)
+  (with-eval-after-load 'evil
+    (evil-define-key 'normal js2-mode-map (kbd "K") 'ycmd-show-documentation)
+    (evil-leader/set-key-for-mode 'js2-mode "mgs" 'ycmd-show-documentation)
+    (evil-leader/set-key-for-mode 'js2-mode "mgd" 'ycmd-goto-definition))
+  :config
+  (tern-mode t))
 
 (use-package requirejs-mode
   :ensure t
