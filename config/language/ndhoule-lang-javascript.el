@@ -102,6 +102,7 @@
 
 
   ;; Indentation
+  (setq js-indent-level ndhoule/preferred-javascript-indent-level)
   (setq js2-indent-level ndhoule/preferred-javascript-indent-level)
   (setq js2-basic-offset ndhoule/preferred-javascript-indent-level)
   (setq js2-skip-preprocessor-directives t)
