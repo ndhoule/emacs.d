@@ -12,24 +12,24 @@
   :init
   ; Emacs mode is a whitelisted ycmd mode but is not recognized by ycmd
   (setq ycmd-global-modes '(not emacs-lisp-mode))
-  ; TODO: Don't point at vim config, point at global installation location
-  ; instead. Also, definitely expand this path using $HOME
   (set-variable 'ycmd-server-command
-                '("/usr/local/bin/python2" "/Users/ndhoule/.config/nvim/vendor/YouCompleteMe/third_party/ycmd/ycmd"))
+                '("python"
+                  ; TODO(ndhoule): Make this value configurable somewhere, stop hardcoding
+                  "/Users/ndhoule/dev/src/github.com/Valloric/ycmd/ycmd"))
   (add-hook 'after-init-hook #'global-ycmd-mode))
 
 (use-package company-ycmd
   :ensure t
-  :commands company-ycmd
   :pin melpa
-  :config
-  (with-eval-after-load  "company" (company-ycmd-setup)))
+  :commands company-ycmd
+  :init
+  (with-eval-after-load 'company (company-ycmd-setup)))
 
 (use-package flycheck-ycmd
   :ensure t
   :pin melpa
   :config
-  (with-eval-after-load  "flycheck" (flycheck-ycmd-setup)))
+  (with-eval-after-load 'flycheck (flycheck-ycmd-setup)))
 
 (use-package company
   :ensure t
