@@ -93,6 +93,13 @@
   (setq js2-highlight-external-variables nil)
   (setq js2-highlight-level 3)
 
+  ;; Disable js2-mode linting when Flycheck is enabled; linters through Flycheck
+  ;; generally offer superior feedback than js2-mode's parser
+  (with-eval-after-load "flycheck"
+    (setq js2-mode-show-parse-errors nil)
+    (setq js2-mode-show-strict-warnings nil))
+
+
   ;; Indentation
   (setq js2-indent-level ndhoule/preferred-javascript-indent-level)
   (setq js2-basic-offset ndhoule/preferred-javascript-indent-level)
