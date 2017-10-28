@@ -7,8 +7,16 @@
 ;;; Code:
 
 (defun add-to-loadpath (&rest paths)
-  "Add a series of paths to the loadpath."
+  "Add a series of PATHS to the loadpath."
   (mapc (apply-partially 'add-to-list 'load-path) paths))
+
+(defun ndhoule/package-ensure-installed (package)
+  "Ensure a given PACKAGE is installed, refreshing packages only if necessary."
+  (unless (package-installed-p package)
+    (unless ndhoule/did-refresh-packages
+      (package-refresh-contents)
+      (setq ndhoule/did-refresh-packages t))
+    (package-install package)))
 
 (setq core-config-dir
       (expand-file-name "core" user-emacs-directory))
@@ -34,15 +42,10 @@
 
 (setq ndhoule/did-refresh-packages nil)
 
-(defun ndhoule/package-ensure-installed (package)
-  (unless (package-installed-p package)
-    (unless ndhoule/did-refresh-packages
-      (package-refresh-contents)
-      (setq ndhoule/did-refresh-packages t))
-    (package-install package)))
-
 (dolist (package core-package-list)
   (ndhoule/package-ensure-installed package))
+
+(package-initialize)
 
 (require 'benchmark)
 (require 'use-package)
