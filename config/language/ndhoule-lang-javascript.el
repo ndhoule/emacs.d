@@ -31,6 +31,12 @@
             (lambda ()
               (add-to-list 'company-backends 'company-tern))))
 
+(use-package prettier-js
+  :ensure t
+  :defer t
+  :init
+  (add-hook 'js2-mode-hook 'prettier-js-mode))
+
 (use-package tern
   :ensure t
   :load-path "site-lisp/tern/emacs"
