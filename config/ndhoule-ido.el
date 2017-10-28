@@ -12,44 +12,43 @@
 
 (use-package flx-ido
   :ensure t
+  :defer t
   :config
   (flx-ido-mode 1))
 
 (use-package ido-complete-space-or-hyphen
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package ido-hacks
-  :defer t
-  :ensure t)
-
-(use-package ido-ubiquitous
   :ensure t
-  :config
-  (ido-ubiquitous-mode 1)
+  :defer t)
 
-  ;; Fix ido-ubiquitous for newer packages
-  (defmacro ido-ubiquitous-use-new-completing-read (cmd package)
-    `(eval-after-load ,package
-       '(defadvice ,cmd (around ido-ubiquitous-new activate)
-          (let ((ido-ubiquitous-enable-compatibility nil))
-            ad-do-it)))))
+(use-package ido-completing-read+
+  :ensure t
+  :defer t
+  :config
+  (ido-ubiquitous-mode 1))
 
 (use-package ido-vertical-mode
   :ensure t
+  :defer t
   :config
-  (ido-vertical-mode))
+  (ido-vertical-mode 1)
+  (setq ido-use-faces nil))
 
 (use-package ido
   :ensure t
   :config
+  (ido-mode 1)
+  (ido-everywhere 1)
+
+  ;; TODO: Fix this
   (require 'flx-ido)
   (require 'ido-complete-space-or-hyphen)
+  (require 'ido-completing-read+)
   (require 'ido-hacks)
-  (require 'ido-ubiquitous)
   (require 'ido-vertical-mode)
-
-  (ido-mode t)
-  (setq ido-use-faces nil)
 
   ;; TODO: Break into list and map
   (add-to-list 'ido-ignore-directories "node_modules"))
